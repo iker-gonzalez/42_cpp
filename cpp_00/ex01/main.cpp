@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:55:38 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/03/30 11:30:11 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:55:18 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int main() {
     
-    Contact contact;
+    Contact contact[8];
     std::string command;
+    int i;
     
+    i = 0;
     while (command != "EXIT")
     {
         std::cout << "\nPHONEBOOK\n";
@@ -26,8 +28,9 @@ int main() {
         
         if (command == "ADD")
         {
-           contact.add_contact();
-           contact.view_contact();
+           contact[i].add_contact();
+           contact[i].view_contact();
+           i++;
         }
     }
     return (0);
