@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 10:06:48 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/03/31 11:18:03 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:15:13 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,19 @@ void Contact::display_header()
 	std::cout << "|";
 	/// First name 
 	if (this->first_name.length() > 10)
-		std::cout << this->first_name.substr(0, 9) << ".";
+		std::cout << this->first_name.substr(0, 8) << ".";
 	else
 		std::cout << std::setw(10) << this->first_name;
 	std::cout << "|";
 	/// Last name
 	if (this->last_name.length() > 10)
-		std::cout << this->last_name.substr(0, 9) << ".";
+		std::cout << this->last_name.substr(0, 8) << ".";
 	else
 		std::cout << std::setw(10) << this->last_name;
 	std::cout << "|";
 	/// Nickname
 	if (this->nickname.length() > 10)
-		std::cout << this->nickname.substr(0, 9) << ".";
+		std::cout << this->nickname.substr(0, 8) << ".";
 	else
 		std::cout << std::setw(10) << this->nickname;
 	std::cout << "|" << std::endl;
