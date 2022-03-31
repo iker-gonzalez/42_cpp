@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 10:06:48 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/03/30 17:05:45 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:18:03 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,10 @@ Contact::Contact()
 {
     this->index=0;
 }
-/*
-Contact::Contact(std::string new_first_name, std::string new_last_name, std::string new_nickname, int new_phone_number, std::string new_secret)
-{
-    first_name = new_first_name;
-    last_name = new_last_name;
-    nickname = new_nickname;
-    phone_number = new_phone_number;
-    darkest_secret = new_secret;
-}
-*/
-void    Contact::add_contact() {
-        /*
-        std::string new_first_name;
-        std::string new_last_name;
-        std::string new_nickname;
-        int new_phone_number;
-        std::string new_darkest_secret;*/
+
+void    Contact::set_contact(int index) {
         
+		this->index = index;
         std::cout << "\nEnter your first name: ";
         std::cin >> first_name;
         std::cout << "\nEnter your last name: ";
@@ -43,12 +29,10 @@ void    Contact::add_contact() {
         std::cout << "\nEnter your nickname: ";
         std::cin >> nickname;
         std::cout << "\nEnter your phone number: ";
-        std::cin >> phone_number;
+        std::cin >> phone_number; // ft_isdigit()
         std::cout << "\nEnter your darkest secret: ";
         std::cin >> darkest_secret;
 
-        
-        //Contact contact(new_first_name, new_last_name, new_nickname, new_phone_number, new_darkest_secret);
 }
 
 void    Contact::view_contact() {
@@ -59,4 +43,34 @@ void    Contact::view_contact() {
     std::cout << "Nickname: " << nickname << "\n";
     std::cout << "Phone Number: " << phone_number << "\n";
     std::cout << "Darkest secret: " << darkest_secret << "\n";
+}
+
+void Contact::display_header()
+{
+	// Index
+	std::cout << "|" << std::setw(10) << this->index;
+	std::cout << "|";
+	/// First name 
+	if (this->first_name.length() > 10)
+		std::cout << this->first_name.substr(0, 9) << ".";
+	else
+		std::cout << std::setw(10) << this->first_name;
+	std::cout << "|";
+	/// Last name
+	if (this->last_name.length() > 10)
+		std::cout << this->last_name.substr(0, 9) << ".";
+	else
+		std::cout << std::setw(10) << this->last_name;
+	std::cout << "|";
+	/// Nickname
+	if (this->nickname.length() > 10)
+		std::cout << this->nickname.substr(0, 9) << ".";
+	else
+		std::cout << std::setw(10) << this->nickname;
+	std::cout << "|" << std::endl;
+}
+
+void Contact::update_index() {
+	
+	this->index = this->index - 1;
 }
