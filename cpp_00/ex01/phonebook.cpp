@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:05:39 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/03/31 13:23:46 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:57:21 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void Phonebook::search_contact() {
 	this->search_header();
 	std::cout << "\nType index of the desired entry: ";
 	std::cin >> index;
-	if (index > 0 && index < 9)
+	if (index > 0 && index < 9 && index <= this->amount) /// INFINITE LOOP WHEN ENTERING SOMETHING OUT OF RANGE.
 		this->contacts[index - 1].view_contact();
 	else
 		std::cout << "\nInvalid input. Try again.\n";

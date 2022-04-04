@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 10:06:48 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/03/31 12:15:13 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:43:32 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ Contact::Contact()
     this->index=0;
 }
 
+int		ft_isdigit(std::string phone_number) {
+	
+	int i;
+
+	i = 0;
+	while (phone_number[i])
+	{
+		if (phone_number[i] < 48 || phone_number[i] > 57)
+			return (0);
+		i++;
+	}
+	return(1);
+}
+
 void    Contact::set_contact(int index) {
         
 		this->index = index;
@@ -29,7 +43,12 @@ void    Contact::set_contact(int index) {
         std::cout << "\nEnter your nickname: ";
         std::cin >> nickname;
         std::cout << "\nEnter your phone number: ";
-        std::cin >> phone_number; // ft_isdigit()
+        std::cin >> phone_number; 
+		while (!ft_isdigit(phone_number))
+		{
+			std::cout << "\n**Incorrect format.**\n Enter a valid phone number: ";
+			std::cin >> phone_number;
+		}
         std::cout << "\nEnter your darkest secret: ";
         std::cin >> darkest_secret;
 
@@ -52,19 +71,19 @@ void Contact::display_header()
 	std::cout << "|";
 	/// First name 
 	if (this->first_name.length() > 10)
-		std::cout << this->first_name.substr(0, 8) << ".";
+		std::cout << this->first_name.substr(0, 9) << ".";
 	else
 		std::cout << std::setw(10) << this->first_name;
 	std::cout << "|";
 	/// Last name
 	if (this->last_name.length() > 10)
-		std::cout << this->last_name.substr(0, 8) << ".";
+		std::cout << this->last_name.substr(0, 9) << ".";
 	else
 		std::cout << std::setw(10) << this->last_name;
 	std::cout << "|";
 	/// Nickname
 	if (this->nickname.length() > 10)
-		std::cout << this->nickname.substr(0, 8) << ".";
+		std::cout << this->nickname.substr(0, 9) << ".";
 	else
 		std::cout << std::setw(10) << this->nickname;
 	std::cout << "|" << std::endl;

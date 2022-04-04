@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:55:38 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/03/31 13:41:53 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:40:56 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main() {
         	phonebook.add_contact();
 		else if (command == "SEARCH")
 			phonebook.search_contact();
-		else
+		else if (command != "EXIT")
 			std::cout << "\n///  Invalid command. Try again.  ///\n";
     }
     return (0);
