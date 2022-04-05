@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:05:39 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/04/04 12:57:21 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:24:45 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+#include <string.h>
 
 Phonebook::Phonebook(){
 	
@@ -53,13 +54,15 @@ void Phonebook::update_index() {
 
 void Phonebook::search_contact() {
 	
-	int index;
+	std::string index;
+	int index2;
 	
 	this->search_header();
 	std::cout << "\nType index of the desired entry: ";
 	std::cin >> index;
-	if (index > 0 && index < 9 && index <= this->amount) /// INFINITE LOOP WHEN ENTERING SOMETHING OUT OF RANGE.
-		this->contacts[index - 1].view_contact();
+	index2 = atoi(index.c_str());
+	if (index2 > 0 && index2 < 9 && index2 <= this->amount)
+		this->contacts[index2 - 1].view_contact();
 	else
 		std::cout << "\nInvalid input. Try again.\n";
 }

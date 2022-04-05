@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:56:33 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/03/31 10:49:48 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:12:33 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ class Contact {
 		void 	display_header();
         void    view_contact();
 		void	update_index();
+		static int		ft_isdigit(std::string phone_number);
 };

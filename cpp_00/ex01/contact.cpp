@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 10:06:48 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/04/04 12:43:32 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:12:11 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Contact::Contact()
     this->index=0;
 }
 
-int		ft_isdigit(std::string phone_number) {
+int		Contact::ft_isdigit(std::string phone_number) {
 	
 	int i;
 
