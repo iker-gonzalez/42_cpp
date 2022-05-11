@@ -6,11 +6,15 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:59:42 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/11 16:08:06 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:33:17 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie(void) {
+    return ;
+}
 
 Zombie::Zombie(std::string name) {
     
@@ -37,4 +41,9 @@ void    Zombie::sayName(void)
 std::string    Zombie::getName(void)
 {
     return(this->name);
+}
+
+void    Zombie::setName(std::string new_name)
+{
+    this->name = new_name;
 }

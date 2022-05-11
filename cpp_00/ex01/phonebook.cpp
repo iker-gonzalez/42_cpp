@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:05:39 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/04/05 10:24:45 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:26:42 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include <string.h>
 
-Phonebook::Phonebook(){
+Phonebook::Phonebook(void){
 	
 	this->amount = 0;
-};
+}
+
+Phonebook::~Phonebook(void){}
 
 void Phonebook::add_contact(void)
 {
@@ -45,13 +47,6 @@ void Phonebook::add_contact(void)
 	}
 }
 
-void Phonebook::update_index() {
-	
-	for (int i = 0; i < 8; i++) {
-		this->contacts[i].update_index();
-	}
-}
-
 void Phonebook::search_contact() {
 	
 	std::string index;
@@ -67,7 +62,6 @@ void Phonebook::search_contact() {
 		std::cout << "\nInvalid input. Try again.\n";
 }
 
-
 void Phonebook::search_header(void)
 {
 	std::cout << std::endl;
@@ -78,6 +72,3 @@ void Phonebook::search_header(void)
 		this->contacts[i].display_header();
 	std::cout << "|-------------------------------------------|" << std::endl;
 }
-
-
-

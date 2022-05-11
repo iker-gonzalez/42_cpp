@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:02:32 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/04/05 10:04:34 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:48:23 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class Phonebook {
 
     public:
 
-        Phonebook();
+        Phonebook(void);
+        ~Phonebook(void);
 		void add_contact();
 		void search_contact();
 		void search_header(void);
-		void update_index();
 
 };

@@ -3,21 +3,76 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 10:06:48 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/04/05 10:12:11 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:33:55 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
-Contact contact;
+// getters
+
+std::string	Contact::getFirstName(void)
+{
+	return(this->first_name);
+}
+
+std::string	Contact::getLastName(void)
+{
+	return(this->last_name);
+}
+
+std::string	Contact::getNickName(void)
+{
+	return(this->nickname);
+}
+
+std::string	Contact::getPhoneNumber(void)
+{
+	return(this->phone_number);
+}
+
+std::string	Contact::getDarkestSecret(void)
+{
+	return(this->darkest_secret);
+}
+
+// setters
+
+void	Contact::setFirstName(std::string new_first_name)
+{
+	this->first_name = new_first_name;
+}
+
+void	Contact::setLastName(std::string new_last_name)
+{
+	this->last_name = new_last_name;
+}
+
+void	Contact::setNickName(std::string new_nickname)
+{
+	this->nickname = new_nickname;
+}
+
+void	Contact::setPhoneNumber(std::string new_phone_number)
+{
+	this->phone_number = new_phone_number;
+}
+
+void	Contact::setDarkestSecret(std::string new_darkest_secret)
+{
+	this->darkest_secret = new_darkest_secret;
+}
+
 
 Contact::Contact()
 {
     this->index=0;
 }
+
+Contact::~Contact(){}
 
 int		Contact::ft_isdigit(std::string phone_number) {
 	
@@ -37,31 +92,30 @@ void    Contact::set_contact(int index) {
         
 		this->index = index;
         std::cout << "\nEnter your first name: ";
-        std::cin >> first_name;
+        std::cin >> this->first_name;
         std::cout << "\nEnter your last name: ";
-        std::cin >> last_name;
+        std::cin >> this->last_name;
         std::cout << "\nEnter your nickname: ";
-        std::cin >> nickname;
+        std::cin >> this->nickname;
         std::cout << "\nEnter your phone number: ";
-        std::cin >> phone_number; 
+        std::cin >> this->phone_number; 
 		while (!ft_isdigit(phone_number))
 		{
-			std::cout << "\n**Incorrect format.**\n Enter a valid phone number: ";
-			std::cin >> phone_number;
+			std::cout << "\n**Only numeric argument allowed.**\n Enter a valid phone number: ";
+			std::cin >> this->phone_number;
 		}
         std::cout << "\nEnter your darkest secret: ";
-        std::cin >> darkest_secret;
-
+        std::cin >> this->darkest_secret;
 }
 
 void    Contact::view_contact() {
     
     std::cout << "\n";
-    std::cout << "First Name: " << first_name << "\n";
-    std::cout << "Last Name: " << last_name << "\n";
-    std::cout << "Nickname: " << nickname << "\n";
-    std::cout << "Phone Number: " << phone_number << "\n";
-    std::cout << "Darkest secret: " << darkest_secret << "\n";
+    std::cout << "First Name: " << this->first_name << "\n";
+    std::cout << "Last Name: " << this->last_name << "\n";
+    std::cout << "Nickname: " << this->nickname << "\n";
+    std::cout << "Phone Number: " << this->phone_number << "\n";
+    std::cout << "Darkest secret: " << this->darkest_secret << "\n";
 }
 
 void Contact::display_header()
@@ -89,7 +143,3 @@ void Contact::display_header()
 	std::cout << "|" << std::endl;
 }
 
-void Contact::update_index() {
-	
-	this->index = this->index - 1;
-}
