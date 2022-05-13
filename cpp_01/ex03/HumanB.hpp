@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:39:55 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/12 12:37:18 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/13 08:56:40 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class HumanB {
 		HumanB(std::string name);
 		~HumanB(void);
 		void	attack(void);
-		void	setWeapon(Weapon weapon);
+		void	setWeapon(Weapon& weapon);
 };
 
 #endif
