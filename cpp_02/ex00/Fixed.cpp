@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:13:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/16 12:23:20 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/17 09:33:40 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(void) {
 Fixed::Fixed(const Fixed &old_obj) {
 	
 	std::cout << "Copy constructor called" << std::endl;
-	this->value = old_obj.getRawBits();
+	*this = old_obj;
 }
 
 Fixed::~Fixed(void) {
