@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:51:04 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/11 17:33:34 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/17 10:30:05 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ class Zombie {
 		std::string getName(void);
 		void setName(std::string name);
 };
+
+Zombie* zombieHorde( int N, std::string name );
 
 #endif

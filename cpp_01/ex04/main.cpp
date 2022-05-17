@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:42:44 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/13 11:59:36 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/17 11:31:03 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,30 @@ int	error(std::string err)
 	return(1);
 }
 
-bool	setFile(std::string file, std::string s1, std::string s2)
+bool	replace(std::string file, std::string s1, std::string s2)
 {
     std::ifstream f(file);
 	std::ofstream outfile;
 	std::string	line;
-
+	std::size_t length = 0;
+	std::size_t pos = 0;
+	
+	if (!f.is_open())
+		return false;
+	if (file == "")
+		return false;
 	outfile.open(file.append("REPLACE"), std::ios::out);
 	while(std::getline(f, line))
 	{
-		std::size_t pos = line.find(s1);
-		if (pos != std::string::npos)
+		while (length != line.length())
 		{
-			line.erase(pos, s1.length());
-			line.insert(pos, s2);
+			pos = line.find(s1);
+			length = line.length();
+			if (pos <= line.length())
+			{
+				line.erase(pos, s1.length());
+				line.insert(pos, s2);
+			}
 		}
 		outfile << line << std::endl;
 	}
@@ -50,8 +60,10 @@ int main (int argc, char **argv)
 	
 	if (argc != 4)
 		return(error("Wrong number of arguments"));
+	if (!argv[1])
+		return(error("Empty file"));
 	if (!argv[2] || !argv[3])
 		return(error("Empty string"));
-	if (!setFile(argv[1], argv[2], argv[3]))
+	if (!replace(argv[1], argv[2], argv[3]))
 		return(error("Could not set the file"));
 }

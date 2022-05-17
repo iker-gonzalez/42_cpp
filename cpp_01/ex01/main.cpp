@@ -6,13 +6,11 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:10:34 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/11 18:05:34 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/17 10:29:58 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-Zombie* zombieHorde( int N, std::string name );
 
 int main(void)
 {

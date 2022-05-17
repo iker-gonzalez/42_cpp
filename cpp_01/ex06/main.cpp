@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 12:10:40 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/13 14:32:57 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/17 11:50:13 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main(int argc, char **argv)
 {
 	Karen karen;
 	
-	karen.complain(argv[1]);
+	if (argv[1])
+		karen.complain(argv[1]);
 	return (0);
 }
