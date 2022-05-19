@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:13:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/17 09:38:15 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:19:43 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ Fixed::Fixed(const Fixed &old_obj) {
 Fixed::Fixed(const int integer) {
 
 	std::cout << "Int constructor called" << std::endl;
-	this->value = integer << fractional_bits;
+	// equivalent to: this->value = integer * 256
+	this->value = integer * (1 << fractional_bits);
 }
 
 Fixed::Fixed(const float floater) {
 
 	std::cout << "Float constructor called" << std::endl;
-	this->value = floater * (1 << fractional_bits);
+	// equivalent to: this->value = floater * 256
+	this->value = roundf(floater * (1 << fractional_bits));
 }
 
 //destructor
@@ -61,12 +63,14 @@ void	Fixed::setRawBits(int const raw) {
 
 float Fixed::toFloat( void ) const {
 	
+	//equivalent to: return ((float)(this->value) / (float)256);
 	return((float)(this->value) / (float)(1 << fractional_bits));
 }
 
 int Fixed::toInt( void ) const {
 	
-	return ((int)(this->value >> this->fractional_bits));
+	//equivalent to: return ((int)(this->value) / (int)256);
+	return ((int)(this->value) / (int)(1 << fractional_bits));
 }
 
 //overload operators
