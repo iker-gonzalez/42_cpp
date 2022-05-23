@@ -6,9 +6,12 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:58:19 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/23 13:16:27 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:12:44 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 
@@ -44,3 +47,5 @@ class ClapTrap {
         int  getEnergyPoints(void);
         int  getAtackDamage(void);
 };
+
+#endif
