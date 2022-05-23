@@ -6,20 +6,25 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:57:54 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/23 13:24:35 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:08:44 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) {
 
     ClapTrap zor = ClapTrap("Zor");
-    ClapTrap peru = ClapTrap("Peru");
+    ScavTrap jon = ScavTrap("Jon");
 
-    zor.attack("Peru");
-    peru.takeDamage(zor.getAtackDamage());
+    zor.attack("Jon");
+    jon.takeDamage(zor.getAtackDamage());
 
-    peru.beRepaired(10);
-    zor.attack("Peru");
+    jon.beRepaired(10);
+    jon.attack("Zor");
+    zor.takeDamage(jon.getAtackDamage());
+
+    zor.attack("Jon");
+    zor.beRepaired(20);
+    jon.guardGate();
 }

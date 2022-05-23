@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:58:19 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/23 13:16:27 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/23 13:48:58 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 class ClapTrap {
 
-    private:
+    protected:
     
         std::string _name;
-        unsigned int _hitpoints;
+        int _hitpoints;
         int _energyPoints;
-        unsigned int _attackDamage;
+        int _attackDamage;
 
     public:
 
@@ -30,7 +30,7 @@ class ClapTrap {
 
         //destructor
         ~ClapTrap(void);
-        
+
         //assignation operator overload
         ClapTrap &operator=(ClapTrap const &obj);
 

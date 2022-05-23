@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 09:57:54 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/23 13:24:35 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/05/23 11:21:05 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/05/23 13:39:29 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main(void) {
+class ScavTrap: public ClapTrap {
+    
+    public:
 
-    ClapTrap zor = ClapTrap("Zor");
-    ClapTrap peru = ClapTrap("Peru");
+        //constructors
+        ScavTrap(void);
+        ScavTrap(std::string new_name);
+        ScavTrap(ScavTrap const &obj);
 
-    zor.attack("Peru");
-    peru.takeDamage(zor.getAtackDamage());
+        //destructor
+        ~ScavTrap(void);
 
-    peru.beRepaired(10);
-    zor.attack("Peru");
-}
+        //assignation operator overload
+        ScavTrap &operator=(ScavTrap const &obj);
+
+        //methods
+        void attack(std::string const &target);
+        void guardGate(void);
+};
