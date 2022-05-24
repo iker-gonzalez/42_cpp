@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:57:54 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 09:07:19 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/24 10:01:28 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int main(void) {
 
-    ClapTrap zor = ClapTrap("Zor");
-    ScavTrap jon = ScavTrap("Jon");
-    FragTrap jim = FragTrap("Jim");
+    ClapTrap zor ("Zor");
+    ScavTrap jon ("Jon");
+    FragTrap jim ("Jim");
 
     zor.attack("Jon");
     jon.takeDamage(zor.getAtackDamage());
