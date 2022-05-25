@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 11:29:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 12:14:08 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/05/24 11:16:18 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/05/24 11:29:12 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int main(void) {
+#include "Animal.hpp"
 
-    Cat rafa;
-    Animal anm;
-    Dog yurre;
+class Cat: public Animal {
 
-    rafa.makeSound();
-    anm.makeSound();
-    yurre.makeSound();
+    public:
 
-    //missing this part
-    WrongAnimal remo;
-    WrongCat cai;
+        Cat(void);
+        Cat(Cat const &obj);
+        ~Cat(void);
 
-    remo.makeSound();
-    cai.makeSound();
-}
+        Cat &operator=(Cat const &obj);
+        void makeSound(void);
+};
+
+#endif

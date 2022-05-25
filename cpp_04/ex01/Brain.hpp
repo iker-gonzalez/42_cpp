@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 11:29:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 12:14:08 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/05/25 10:07:28 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/05/25 11:31:50 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int main(void) {
+#include <iostream>
 
-    Cat rafa;
-    Animal anm;
-    Dog yurre;
+class Brain {
 
-    rafa.makeSound();
-    anm.makeSound();
-    yurre.makeSound();
+    private:
+        std::string ideas[100];
 
-    //missing this part
-    WrongAnimal remo;
-    WrongCat cai;
+    public:
 
-    remo.makeSound();
-    cai.makeSound();
-}
+        Brain(void);
+        Brain(Brain const &obj);
+        ~Brain(void);
+
+        //Brain &operator=(Brain const &obj);
+};
+
+#endif

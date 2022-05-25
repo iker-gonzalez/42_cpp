@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 11:29:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 12:14:08 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/05/24 11:38:16 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/05/24 11:38:35 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main(void) {
+#include "Animal.hpp"
 
-    Cat rafa;
-    Animal anm;
-    Dog yurre;
+class Dog: public Animal {
 
-    rafa.makeSound();
-    anm.makeSound();
-    yurre.makeSound();
+    public:
 
-    //missing this part
-    WrongAnimal remo;
-    WrongCat cai;
+        Dog(void);
+        Dog(Dog const &obj);
+        ~Dog(void);
 
-    remo.makeSound();
-    cai.makeSound();
-}
+        Dog &operator=(Dog const &obj);
+        void makeSound(void);
+};
+
+#endif

@@ -5,29 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 11:29:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 12:14:08 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/05/25 10:27:53 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/05/25 12:10:41 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
-int main(void) {
 
-    Cat rafa;
-    Animal anm;
-    Dog yurre;
+#define NUMBER_OF_ANIMALS 10
 
-    rafa.makeSound();
-    anm.makeSound();
-    yurre.makeSound();
+int main (void) {
 
-    //missing this part
-    WrongAnimal remo;
-    WrongCat cai;
-
-    remo.makeSound();
-    cai.makeSound();
+    Animal *animals[NUMBER_OF_ANIMALS];
+    int i = 0;
+    int dogs = 5;
+    int cats = 5;
+    
+    while (i < NUMBER_OF_ANIMALS) {
+        if (dogs) {
+            animals[i] = Dog();
+            dogs--;
+        }
+        else if (cats) {
+            
+            animals[i] = Cat();
+            cats--;
+        }
+        i++;
+        std::cout << "PEEE" << std::endl;
+    }
 }

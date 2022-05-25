@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 11:29:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 12:14:08 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/05/24 11:02:05 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/05/25 12:35:26 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main(void) {
+#include <iostream>
 
-    Cat rafa;
-    Animal anm;
-    Dog yurre;
+class Animal {
 
-    rafa.makeSound();
-    anm.makeSound();
-    yurre.makeSound();
+    protected:
+        std::string _type;
 
-    //missing this part
-    WrongAnimal remo;
-    WrongCat cai;
+    public:
 
-    remo.makeSound();
-    cai.makeSound();
-}
+        Animal(void);
+        Animal(Animal const &obj);
+        ~Animal(void);
+
+        Animal &operator=(Animal const &obj);
+
+        virtual void makeSound(void) = 0;
+};
+
+#endif
