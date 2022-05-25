@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:27:53 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/25 12:10:41 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:10:32 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
+std::ostream &operator<<(std::ostream &out, Animal const &fixed);
+
+std::ostream &operator<<(std::ostream &out, Animal const &obj)
+{
+	out << "Animal: " << obj.getType() << std::endl;
+	return (out);
+}
 
 #define NUMBER_OF_ANIMALS 10
 
 int main (void) {
 
-    Animal *animals[NUMBER_OF_ANIMALS];
+    Animal animals[NUMBER_OF_ANIMALS];
     int i = 0;
     int dogs = 5;
     int cats = 5;
@@ -37,4 +44,6 @@ int main (void) {
         i++;
         std::cout << "PEEE" << std::endl;
     }
+    for (i = 0; i < NUMBER_OF_ANIMALS; i++)
+        std::cout << animals[i] << std::endl;
 }
