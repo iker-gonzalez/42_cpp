@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:38:59 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/25 12:10:23 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/26 10:56:04 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,20 @@ Dog &Dog::operator=(Dog const &obj) {
     std::cout << "Dog assignation operator overload called" << std::endl;
     this->Animal::operator=(obj);
     _type = obj._type;
-    *brain = *(obj.brain);
+    //shallow copy
+    std::cout << "Dog (shallow copy):" << std::endl;
+    std::cout << &brain << std::endl;
+    std::cout << &obj.brain << std::endl;
+    brain = obj.brain;
+    //brain = new Brain(*obj.brain);
+    std::cout << &brain << std::endl;
+    std::cout << &obj.brain << std::endl;
     return(*this);
 }
 
 void Dog::makeSound(void){
     std::cout << "Guaaauguauu" << std::endl;
 }
-
 
 Brain	*Dog::getBrain( void ) const {
     return(this->brain);

@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:16:34 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/25 12:21:09 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/26 10:55:30 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Cat::Cat(void) {
 Cat::Cat(Cat const &obj) {
     std::cout << "Cat copy constructor called" << std::endl;
     *this = obj;
+    std::cout << "holaa" << std::endl;
 }
 
 Cat::~Cat(void) {
@@ -31,11 +32,21 @@ Cat::~Cat(void) {
 Cat &Cat::operator=(Cat const &obj) {
     std::cout << "Cat assignation operator overload called" << std::endl;
     _type = obj._type;
-    *brain = *(obj.brain);
+    //deep copy
+    std::cout << "Cat (deep copy):" << std::endl;
+    std::cout << &brain << std::endl;
+    std::cout << &obj.brain << std::endl;
+    brain = new Brain(*obj.brain);
+    std::cout << &brain << std::endl;
+    std::cout << &obj.brain << std::endl;
     return(*this);
 }
 
 void Cat::makeSound(void){
     std::cout << "Miaaauuuuu" << std::endl;
+}
+
+Brain	*Cat::getBrain( void ) const {
+    return(this->brain);
 }
 

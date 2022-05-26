@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:27:53 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/25 13:10:32 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/26 11:00:52 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,34 @@ std::ostream &operator<<(std::ostream &out, Animal const &obj)
 
 int main (void) {
 
-    Animal animals[NUMBER_OF_ANIMALS];
+    Animal *animals[NUMBER_OF_ANIMALS];
+    Brain *brain;
     int i = 0;
-    int dogs = 5;
-    int cats = 5;
     
     while (i < NUMBER_OF_ANIMALS) {
-        if (dogs) {
-            animals[i] = Dog();
-            dogs--;
-        }
-        else if (cats) {
-            
-            animals[i] = Cat();
-            cats--;
-        }
+        if (i % 2)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
         i++;
-        std::cout << "PEEE" << std::endl;
     }
-    for (i = 0; i < NUMBER_OF_ANIMALS; i++)
-        std::cout << animals[i] << std::endl;
+    std::cout << "-----------------" << std::endl;
+    //std::cout << *(animals[4]) << std::endl;
+    brain = animals[4]->getBrain();
+    brain->setIdeas("I want to play!", 0);
+	brain->setIdeas("When will you arrive home?", 1);
+	brain->setIdeas("Pet me, please!", 2);
+	brain->setIdeas("I want to eat!", 3);
+	std::cout << animals[4]->getBrain()->getIdeas(2) << std::endl;
+
+	*(animals[2]) = *(animals[4]);
+	std::cout << animals[2]->getBrain()->getIdeas(2) << std::endl;
+    
+    //std::cout << "Brain: " << brain << std::endl;*/
+
+    std::cout << "-----------------" << std::endl;
+
+    for (i = 0; i < NUMBER_OF_ANIMALS; i++) {
+        delete animals[i];
+    }
 }
