@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:21:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 09:58:41 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:31:47 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 class ScavTrap: virtual public ClapTrap {
     
     public:
+
+        int _energyPoints;
 
         //constructors
         ScavTrap(void);

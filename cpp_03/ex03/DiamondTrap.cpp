@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:34:04 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 10:52:15 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:37:09 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ DiamondTrap::DiamondTrap(std::string new_name) {
     std::cout << "Hit points: " << _hitpoints << std::endl; 
     this->_energyPoints = ScavTrap::_energyPoints;
     std::cout << "Energy points: " << _energyPoints << std::endl;
-    std::cout << "Energy points scav: " << ScavTrap::_energyPoints << std::endl;
     this->_attackDamage = FragTrap::_attackDamage;
     std::cout << "Attach damage: " << _attackDamage << std::endl;
     std::cout << "===============" << std::endl;
