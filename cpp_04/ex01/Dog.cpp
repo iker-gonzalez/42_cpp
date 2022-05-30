@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:38:59 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/26 10:56:04 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/30 11:40:55 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,8 @@ Dog &Dog::operator=(Dog const &obj) {
     this->Animal::operator=(obj);
     _type = obj._type;
     //shallow copy
-    std::cout << "Dog (shallow copy):" << std::endl;
-    std::cout << &brain << std::endl;
-    std::cout << &obj.brain << std::endl;
     brain = obj.brain;
     //brain = new Brain(*obj.brain);
-    std::cout << &brain << std::endl;
-    std::cout << &obj.brain << std::endl;
     return(*this);
 }
 

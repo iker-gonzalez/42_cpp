@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:16:34 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/26 10:55:30 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/30 11:32:47 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,7 @@ Cat &Cat::operator=(Cat const &obj) {
     std::cout << "Cat assignation operator overload called" << std::endl;
     _type = obj._type;
     //deep copy
-    std::cout << "Cat (deep copy):" << std::endl;
-    std::cout << &brain << std::endl;
-    std::cout << &obj.brain << std::endl;
-    brain = new Brain(*obj.brain);
-    std::cout << &brain << std::endl;
-    std::cout << &obj.brain << std::endl;
+    brain = new Brain (*obj.brain);
     return(*this);
 }
 
