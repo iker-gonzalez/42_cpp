@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 13:13:39 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/31 10:16:39 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/05/31 10:28:41 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/05/31 11:38:17 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
-
-#include "AMateria.hpp"
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Ice: public AMateria {
+class Character: public ICharacter {
 	
-	protected:
+	private:
 	
-		std::string _type;
-
+	std::string _name;
+	AMateria *_inventory[3];
+	
 	public:
 	
-		Ice(void);
-		Ice(std::string const &type);
-		Ice(Ice const &obj);
-		Ice(AMateria const &obj);
-		~Ice(void);
+		Character(void);
+		Character(std::string new_name);
+		Character(Character const &obj);
 		
-		Ice &operator=(Ice const &obj);
-		virtual AMateria *clone() const;
-		virtual void use(ICharacter &target);
+		~Character(void);
+		
+		Character &operator=(Character const &obj);
+		
+		virtual std::string const & getName() const;
+		
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter &target);
 };
-
-#endif

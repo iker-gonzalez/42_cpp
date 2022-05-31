@@ -6,21 +6,13 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 10:27:53 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 11:56:46 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 08:45:14 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-
-std::ostream &operator<<(std::ostream &out, Animal const &fixed);
-
-std::ostream &operator<<(std::ostream &out, Animal const &obj)
-{
-	out << "Animal: " << obj.getType() << std::endl;
-	return (out);
-}
 
 #define NUMBER_OF_ANIMALS 10
 

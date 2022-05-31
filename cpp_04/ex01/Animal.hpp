@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:02:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 11:55:56 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 08:45:06 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ class Animal {
 	    const std::string	&getType( void ) const ;
         virtual Brain		*getBrain( void ) const = 0;
 };
+
+std::ostream &operator<<(std::ostream &out, Animal const &fixed);
 
 #endif

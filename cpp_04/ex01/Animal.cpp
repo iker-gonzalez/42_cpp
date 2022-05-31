@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:07:38 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/26 09:27:15 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 08:44:49 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,10 @@ void Animal::makeSound(void) {
 
 const std::string	&Animal::getType( void ) const {
     return(this->_type);
+}
+
+std::ostream &operator<<(std::ostream &out, Animal const &obj)
+{
+	out << "Animal: " << obj.getType() << std::endl;
+	return (out);
 }
