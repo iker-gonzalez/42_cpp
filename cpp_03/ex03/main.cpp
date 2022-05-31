@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:57:54 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 10:15:24 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:27:14 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(void) {
     jim.beRepaired(50);
     jon.guardGate();*/
 
-    //zor.whoAmI();	
+    zor.whoAmI();
 	zor.attack("Kim");
 	zor.highFivesGuys();
 	zor.guardGate();

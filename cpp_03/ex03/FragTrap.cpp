@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:52:22 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 10:51:50 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:29:36 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,17 @@ void FragTrap::attack(std::string const &target) {
 
     if ((int)_energyPoints >= 6 && _hitpoints)
     {
-        std::cout << "FragTrap " << _name << " attacks " << target;
+        std::cout << _name << " attacks " << target;
         std::cout << ", causing " << _attackDamage << " points of damage!" << std::endl;
         this->_energyPoints -= 6;
-        std::cout << "FragTrap " << _name << " has " << getEnergyPoints() << " energy points (-6)" << std::endl;
+        std::cout << _name << " has " << getEnergyPoints() << " energy points (-6)" << std::endl;
     }
     else if ((int)_energyPoints < 6 && _hitpoints)
-        std::cout << "FragTrap " << _name << " can't attack because he hasn't have enough energy points" << std::endl;
+        std::cout << _name << " can't attack because he hasn't have enough energy points" << std::endl;
     else if (!_hitpoints)
-        std::cout << "FragTrap " << _name << " can't attack because he is dead" << std::endl;
+        std::cout << _name << " can't attack because he is dead" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void) {
-    std::cout << "FragTrapp " <<_name << " says: hey, you earthling, give me five!" << std::endl;
+    std::cout << _name << " says: hey, you earthling, give me five!" << std::endl;
 }

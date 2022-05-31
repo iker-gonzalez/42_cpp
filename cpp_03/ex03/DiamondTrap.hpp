@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:34:40 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 10:49:18 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:22:14 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class DiamondTrap: public ScavTrap, public FragTrap {
 
         //methods
         using ScavTrap::attack;
+        void whoAmI();
 };
 
 #endif

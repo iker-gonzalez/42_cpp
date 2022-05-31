@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:34:04 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 12:37:09 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:25:24 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,8 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &obj) {
     this->_attackDamage = obj._attackDamage;
 
     return(*this);
+}
+
+void    DiamondTrap::whoAmI() {
+    std::cout << "I am " << _name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:24:56 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 10:52:00 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:33:21 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,17 @@ void ScavTrap::attack(std::string const &target) {
 
     if ((int)_energyPoints >= 6 && _hitpoints)
     {
-        std::cout << "ScavTrap " << _name << " attacks " << target;
+        std::cout << _name << " attacks " << target;
         std::cout << ", causing " << _attackDamage << " points of damage!" << std::endl;
         this->_energyPoints -= 6;
-        std::cout << "ScavTrap " << _name << " has " << getEnergyPoints() << " energy points (-6)" << std::endl;
+        std::cout << _name << " has " << getEnergyPoints() << " energy points (-6)" << std::endl;
     }
     else if ((int)_energyPoints < 6 && _hitpoints)
-        std::cout << "ScavTrap " << _name << " can't attack because he hasn't have enough energy points" << std::endl;
+        std::cout << _name << " can't attack because he hasn't have enough energy points" << std::endl;
     else if (!_hitpoints)
-        std::cout << "ScavTrap " << _name << " can't attack because he is dead" << std::endl;
+        std::cout << _name << " can't attack because he is dead" << std::endl;
 }
 
 void ScavTrap::guardGate(void) {
-    std::cout << "ScavTrapp " <<_name << " has enterred in Gate keeper mode." << std::endl;
+    std::cout << _name << " has enterred in Gate keeper mode." << std::endl;
 }
