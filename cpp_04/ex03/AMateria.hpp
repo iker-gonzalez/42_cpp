@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:46:06 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/31 11:26:26 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:13:49 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria
 {
 	protected:
@@ -24,17 +26,13 @@ class AMateria
 
 	public:
 
-	AMateria(void);
-	AMateria(AMateria const &obj);
-	AMateria(std::string const &type);
-	~AMateria(void);
+		AMateria(std::string const &type);
+		virtual ~AMateria(void) {};
 
-	AMateria &operator=(AMateria const &obj);
-	
-	virtual AMateria* clone() const = 0;
-	virtual void use(ICharacter &target);
-	
-	std::string const & getType(void) const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter &target);
+		
+		std::string const & getType(void) const; //Returns the materia type
 };
 
 std::ostream &operator<<(std::ostream &out, AMateria const &fixed);

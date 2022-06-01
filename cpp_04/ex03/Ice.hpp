@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:13:39 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/31 10:16:39 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:02:04 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define ICE_HPP
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
 class Ice: public AMateria {
 	
@@ -27,7 +26,6 @@ class Ice: public AMateria {
 		Ice(void);
 		Ice(std::string const &type);
 		Ice(Ice const &obj);
-		Ice(AMateria const &obj);
 		~Ice(void);
 		
 		Ice &operator=(Ice const &obj);

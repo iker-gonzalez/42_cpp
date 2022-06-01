@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:28:41 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/31 11:38:17 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 11:36:29 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+
 #include "ICharacter.hpp"
-#include "AMateria.hpp"
 
 class Character: public ICharacter {
 	
@@ -30,9 +32,11 @@ class Character: public ICharacter {
 		
 		Character &operator=(Character const &obj);
 		
-		virtual std::string const & getName() const;
+		std::string const & getName() const;
 		
-		virtual void equip(AMateria* m);
-		virtual void unequip(int idx);
-		virtual void use(int idx, ICharacter &target);
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter &target);
 };
+
+#endif

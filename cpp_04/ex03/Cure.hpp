@@ -3,20 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:13:04 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/31 10:16:24 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:10:53 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "AMateria.hpp"
 
 #ifndef CURE_HPP
 #define CURE_HPP
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
 class Cure: public AMateria {
 	
@@ -28,8 +25,7 @@ class Cure: public AMateria {
 	
 		Cure(void);
 		Cure(std::string const &type);
-		Cure(Cure const &obj);
-		Cure(AMateria const &obj);
+		//Cure(Cure const &obj);
 		~Cure(void);
 		
 		Cure &operator=(Cure const &obj);

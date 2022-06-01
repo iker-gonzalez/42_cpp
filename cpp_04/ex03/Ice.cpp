@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:29:10 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/31 09:58:29 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:16:51 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,8 @@ Ice::Ice(std::string const &type): AMateria("ice") {
 	this->_type = type;
 }
 
-Ice::Ice(Ice const &obj) {
+Ice::Ice(Ice const &obj): AMateria("ice") {
 	std::cout << "Ice copy constructor called" << std::endl;
-	*this = obj;
-}
-
-Ice::Ice(AMateria const &obj) {
-	std::cout << "Ice copy AMateria constructor called" << std::endl;
 	*this = obj;
 }
 
@@ -43,6 +38,10 @@ Ice &Ice::operator=(Ice const &obj) {
 
 AMateria *Ice::clone() const {
 	return(new Ice(*this));
+}
+
+void Ice::use(ICharacter &target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 
