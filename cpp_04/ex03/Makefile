@@ -6,7 +6,7 @@
 #    By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/06/01 11:23:59 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/01 13:29:02 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ OBJS	= $(SRCS:.cpp=.o)
 
 GPP		= clang++
 RM		= rm -f
-FLAGS=	-Wall -Wextra -Werror
+FLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3
 
 NAME	= materia
 

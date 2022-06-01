@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:28:41 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 11:36:29 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 13:22:59 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Character: public ICharacter {
 	private:
 	
 	std::string _name;
-	AMateria *_inventory[3];
+	AMateria *_inventory[4];
 	
 	public:
 	
