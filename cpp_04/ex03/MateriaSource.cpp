@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:21:07 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 13:51:43 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:13:34 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,13 @@ void    MateriaSource::learnMateria(AMateria *m) {
 		}
 		idx++;
 	}
-	std::cout << "---------Inventory is full. Can't learn another materia.-----------" << std::endl;
+	std::cout << std::endl << "---------Inventory is full. Can't learn another materia.-----------" << std::endl << std::endl;
 }
 
 AMateria*    MateriaSource::createMateria(std::string const &type) {
     
     int idx = 0;
 	
-    if ((type) == "") {
-	    std::cout << "---------Materia can't be CREATED because it does not exist-----------" << std::endl;
-        return NULL;
-    }
 	while (idx < 4)
 	{
         
@@ -69,5 +65,6 @@ AMateria*    MateriaSource::createMateria(std::string const &type) {
 		idx++;
         
 	}
+	std::cout << std::endl << "---------Materia can't be CREATED because it has not being learnt-----------" << std::endl << std::endl;
     return NULL;
 }

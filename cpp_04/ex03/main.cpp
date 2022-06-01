@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:53:10 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 14:02:43 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:25:33 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int main(void) {
 	
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	//src->learnMateria(new Ice());
-	//src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 	//learn more than four materias
 	src->learnMateria(new Ice());
 	
@@ -32,11 +32,11 @@ int main(void) {
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	//create a materia not previously learnt
-	//tmp = src->createMateria("fire");
+	tmp = src->createMateria("fire");
 	//equip a non-existent materia
-	//me->equip(tmp);
+	me->equip(tmp);
 	//unequip a non-existent materia
-	//me->unequip(5);
+	me->unequip(5);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	
@@ -44,6 +44,15 @@ int main(void) {
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
+	//use unequipped materia
+	me->use(1, *bob);
+	//
+	me->equip(tmp);
+	me->equip(tmp);
+	me->equip(tmp);
+	me->equip(tmp);
+	me->equip(tmp);
+
 	
 	delete bob;
 	delete me;

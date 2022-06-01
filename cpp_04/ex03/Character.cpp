@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:34:33 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 14:04:03 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:27:07 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Character::equip(AMateria *m) {
 	int idx = 0;
 	
 	if (!m) {
-		std::cout << "---------" << _name << " can't EQUIP a non-existent materia.-----------" << std::endl;
+		std::cout << "---------" << _name << " can't EQUIP a non-existent materia.-----------" << std::endl << std::endl;
 		return ;
 	}
 	while (idx < 4)
@@ -63,27 +63,25 @@ void Character::equip(AMateria *m) {
 		}
 		idx++;
 	}
-	std::cout << "---------" << _name << " can't ADD another materia. Inventory is full.-----------" << std::endl;
+	std::cout << std::endl << "---------" << _name << " can't EQUIP another materia. Inventory is full.-----------" << std::endl << std::endl;
 }
 
 void Character::unequip(int idx) {
 	
-	if (idx < 0 || idx > 3)
-		return ;
-	if (_inventory[idx]) {
+	if (idx >=0 && idx <= 3 && _inventory[idx]) {
 		std::cout << _name << " UNEQUIPPED " << *(_inventory[idx]) << " materia at index " << idx << std::endl;
 		_inventory[idx] = NULL;
 	}
 	else
-		std::cout << "---------" << _name << " can't UNEQUIP non-existent materia.-----------" << std::endl;
+		std::cout << std::endl <<"---------" << _name << " can't UNEQUIP non-existent materia.-----------" << std::endl << std::endl;
 }
 
 void Character::use(int idx, ICharacter &target) {
 	if (this->_inventory[idx]) {
-		std::cout << _name << " has used " << *(_inventory[idx]) << " materia at index " << idx << std::endl;
+		std::cout << _name << " has USED " << *(_inventory[idx]) << " materia at index " << idx << std::endl;
 		this->_inventory[idx]->use(target);
 		this->unequip(idx);
 	}
 	else
-		std::cout << "---------" << _name << " can't use a non-existent materia.------------" << std::endl;
+		std::cout << std::endl<< "---------" << _name << " can't USE a non-existent materia.------------" << std::endl << std::endl;
 }
