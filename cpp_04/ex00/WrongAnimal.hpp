@@ -24,7 +24,7 @@ class WrongAnimal {
 
         WrongAnimal(void);
         WrongAnimal(WrongAnimal const &obj);
-        ~WrongAnimal(void);
+        virtual ~WrongAnimal(void);
 
         WrongAnimal &operator=(WrongAnimal const &obj);
 

@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:29:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 11:47:51 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:26:58 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,7 @@ int main(void) {
     remo = new WrongCat();
     remo->makeSound();
     cai.makeSound();
+    
+    delete anm;
+    delete remo;
 }

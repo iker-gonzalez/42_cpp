@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:02:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 11:44:41 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:23:04 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal {
 
         Animal(void);
         Animal(Animal const &obj);
-        ~Animal(void);
+        virtual ~Animal(void);
 
         Animal &operator=(Animal const &obj);
 
