@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:38:59 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 10:45:59 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:45:00 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ Dog &Dog::operator=(Dog const &obj) {
     return(*this);
 }
 
-void Dog::makeSound(void){
+void Dog::makeSound(void) const{
     std::cout << "Guaaauguauu" << std::endl;
 }

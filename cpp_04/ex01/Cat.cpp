@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:16:34 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 11:32:47 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 13:41:32 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ Cat::Cat(void) {
 
 Cat::Cat(Cat const &obj) {
     std::cout << "Cat copy constructor called" << std::endl;
+    brain = new Brain ();
     *this = obj;
-    std::cout << "holaa" << std::endl;
 }
 
 Cat::~Cat(void) {
-    std::cout << "Cat default destructor called" << std::endl;
     delete this->brain;
+    std::cout << "Cat default destructor called" << std::endl;
 }
 
 Cat &Cat::operator=(Cat const &obj) {
     std::cout << "Cat assignation operator overload called" << std::endl;
     _type = obj._type;
-    //deep copy
-    brain = new Brain (*obj.brain);
+    *(brain) = *(obj.brain); //this line copies the content of brain which has been previously allocated on constructors.
+    //brain = obj.brain; //shallow copy
     return(*this);
 }
 

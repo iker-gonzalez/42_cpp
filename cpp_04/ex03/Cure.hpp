@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:13:04 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 12:10:53 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:34:56 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 #include "AMateria.hpp"
 
 class Cure: public AMateria {
-	
-	protected:
-	
-		std::string _type;
 
 	public:
 	
@@ -29,6 +25,7 @@ class Cure: public AMateria {
 		~Cure(void);
 		
 		Cure &operator=(Cure const &obj);
+		
 		virtual AMateria *clone() const;
 		virtual void use(ICharacter &target);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:16:18 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 11:29:12 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:44:50 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat: public Animal {
         ~Cat(void);
 
         Cat &operator=(Cat const &obj);
-        void makeSound(void);
+        void makeSound(void) const;
 };
 
 #endif

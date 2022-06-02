@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:29:10 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 12:16:37 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:36:33 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Cure::Cure(void): AMateria("cure") {
 
 Cure::Cure(std::string const &type): AMateria("cure") {
 	std::cout << "Cure parameter constructor called" << std::endl;
-	this->_type = type;
 }
 /*
 Cure::Cure(Cure const &obj): AMateria("cure") {

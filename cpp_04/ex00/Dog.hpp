@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:38:16 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 10:45:38 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:45:07 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog: public Animal {
         ~Dog(void);
 
         Dog &operator=(Dog const &obj);
-        void makeSound(void);
+        void makeSound(void) const;
 };
 
 #endif

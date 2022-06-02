@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:07:38 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 12:01:48 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:46:57 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ Animal &Animal::operator=(Animal const &obj) {
     return (*this);
 }
 
-void Animal::makeSound(void) {
+void Animal::makeSound(void) const{
     std::cout << "Undefined animal should not make a sound" << std::endl;
 }

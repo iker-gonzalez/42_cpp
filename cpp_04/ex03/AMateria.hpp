@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:46:06 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 12:13:49 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:39:41 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ class AMateria
 
 	public:
 
+		AMateria(void);
 		AMateria(std::string const &type);
-		virtual ~AMateria(void) {};
+		
+		virtual ~AMateria(void);
+
+		AMateria &operator=(AMateria const &obj);
 
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter &target);

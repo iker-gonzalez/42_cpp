@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:38:59 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 11:40:55 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 13:45:37 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,20 @@ Dog::Dog(void) {
 
 Dog::Dog(Dog const &obj) {
     std::cout << "Dog copy constructor called" << std::endl;
+    brain = new Brain();
     *this = obj;
 }
 
 Dog::~Dog(void) {
+    delete this->brain; // comment for testing shallow copy
     std::cout << "Dog default destructor called" << std::endl;
-    delete this->brain;
 }
 
 Dog &Dog::operator=(Dog const &obj) {
     std::cout << "Dog assignation operator overload called" << std::endl;
-    this->Animal::operator=(obj);
     _type = obj._type;
-    //shallow copy
-    brain = obj.brain;
-    //brain = new Brain(*obj.brain);
+    *(brain) = *(obj.brain); //this line copies the content of brain which has been previously allocated on constructors.
+    //brain = obj.brain; //uncomment for shallow copy
     return(*this);
 }
 

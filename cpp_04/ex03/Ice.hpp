@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:13:39 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 12:02:04 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:35:06 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 
 class Ice: public AMateria {
 	
-	protected:
-	
-		std::string _type;
-
 	public:
 	
 		Ice(void);
@@ -29,6 +25,7 @@ class Ice: public AMateria {
 		~Ice(void);
 		
 		Ice &operator=(Ice const &obj);
+		
 		virtual AMateria *clone() const;
 		virtual void use(ICharacter &target);
 };

@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:02:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/30 12:05:46 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:44:41 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Animal {
 
     protected:
+
         std::string _type;
 
     public:
@@ -28,7 +29,7 @@ class Animal {
 
         Animal &operator=(Animal const &obj);
 
-        virtual void makeSound(void);
+        virtual void makeSound(void) const;
 };
 
 #endif

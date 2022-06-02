@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:16:34 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 11:26:37 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:44:56 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ Cat &Cat::operator=(Cat const &obj) {
     return(*this);
 }
 
-void Cat::makeSound(void){
+void Cat::makeSound(void) const{
     std::cout << "Miaaauuuuu" << std::endl;
 }

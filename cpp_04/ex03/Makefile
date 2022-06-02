@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+         #
+#    By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/06/01 13:29:02 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/02 12:19:06 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ all:	$(NAME)
 
 $(NAME):$(OBJS)
 	$(GPP) $(FLAGS) -o $(NAME) $(OBJS)
+	
+%.o : %.cpp
+		$(GPP) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

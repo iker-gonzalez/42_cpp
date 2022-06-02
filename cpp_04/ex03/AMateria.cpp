@@ -3,28 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:53:33 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 12:18:09 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:42:58 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+
+AMateria::AMateria(void){
+	std::cout << "AMateria default constructor called" << std::endl;
+	this->_type = _type;
+}
 
 AMateria::AMateria(std::string const &type){
 	std::cout << "AMateria parameter constructor called" << std::endl;
 	this->_type = type;
 }
 
-std::string	const &AMateria::getType (void) const {
-	return(this->_type);
+AMateria::AMateria(void){
+	std::cout << "AMateria default destructor called" << std::endl;
+}
+
+
+AMateria &AMateria::operator=(AMateria const &obj) {
+	std::cout << "AMateria asignment operator overload called" << std::endl;
+    this->_type = obj._type;
+    return *this;
 }
 
 std::ostream &operator<<(std::ostream &out, AMateria const &obj)
 {
 	out << obj.getType();
 	return (out);
+}
+
+std::string	const &AMateria::getType (void) const {
+	return(this->_type);
 }
 
 void	AMateria::use(ICharacter &target) {

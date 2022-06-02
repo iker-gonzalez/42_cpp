@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+         #
+#    By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/05/25 10:57:17 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/02 13:24:19 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,11 @@ NAME	= brain
 
 all:	$(NAME)
 
-$(NAME):$(OBJS)
+$(NAME): $(OBJS)
 	$(GPP) $(FLAGS) -o $(NAME) $(OBJS)
+
+%.o : %.cpp
+		$(GPP) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
