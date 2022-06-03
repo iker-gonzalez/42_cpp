@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:29:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/03 10:57:34 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:00:55 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ int main(void) {
     rafa->makeSound();  //will output the cat sound!
     meta->makeSound();  //will output the animal sound!
     
+    delete meta;
+    delete yurre;
+    delete rafa;
+    
     std::cout << std::endl;
     std::cout << "------WRONG ANIMAL---------" << std::endl;
     std::cout << std::endl;
@@ -66,4 +70,7 @@ int main(void) {
     
     meta2->makeSound();  //will output the animal sound!
     rufo->makeSound();  //will output the animal sound!
+    
+    delete meta2;
+    delete rufo;
 }
