@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:53:10 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/03 12:49:30 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:59:21 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ int main(void) {
 	ICharacter* me = new Character("PACO");
 	
 	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	delete tmp;
 	//create a materia not previously learnt
 	tmp = src->createMateria("fire");
 	//equip a non-existent materia
@@ -59,9 +56,6 @@ int main(void) {
 	Character a;
 	Character b;
 	
-	tmp = src->createMateria("cure");
-	a.equip(tmp);
-	delete tmp;
 	tmp = src->createMateria("ice");
 	a.equip(tmp);
 	b = a;
