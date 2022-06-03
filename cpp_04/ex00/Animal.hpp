@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:02:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 14:23:04 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:41:14 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Animal {
 
         Animal &operator=(Animal const &obj);
 
+        std::string const & getType(void) const;
         virtual void makeSound(void) const;
 };
 

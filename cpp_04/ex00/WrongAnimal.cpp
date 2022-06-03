@@ -31,6 +31,10 @@ WrongAnimal &WrongAnimal::operator=(WrongAnimal const &obj) {
     return (*this);
 }
 
-void WrongAnimal::makeSound(void) {
-    std::cout << "Undefined animal should not make a sound" << std::endl;
+void WrongAnimal::makeSound(void) const{
+    std::cout << "crycrymiauoguau" << std::endl;
+}
+
+std::string	const &WrongAnimal::getType (void) const {
+	return(this->_type);
 }

@@ -6,7 +6,7 @@
 #    By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/06/02 12:18:45 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/03 10:34:10 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ OBJS	= $(SRCS:.cpp=.o)
 
 GPP		= clang++
 RM		= rm -f
-FLAGS=	-Wall -Wextra -Werror
+FLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3
 
 NAME	= animal
 
