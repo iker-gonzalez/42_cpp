@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:07:38 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 11:16:08 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:16:38 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ Animal &Animal::operator=(Animal const &obj) {
     return (*this);
 }
 
-void Animal::makeSound(void) {
-    std::cout << "Undefined animal should not make a sound" << std::endl;
+const std::string	&Animal::getType( void ) const {
+    return(this->_type);
 }

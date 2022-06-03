@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:34:33 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 14:27:07 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:24:58 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ Character::~Character(void) {
 Character &Character::operator=(Character const &obj) {
 	std::cout << "Character asignment operator overload called" << std::endl;
 	this->_name = obj._name;
-	*(this->_inventory) = *(obj._inventory);
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = obj._inventory[i];
 	return *this;
 }
 
@@ -64,6 +65,7 @@ void Character::equip(AMateria *m) {
 		idx++;
 	}
 	std::cout << std::endl << "---------" << _name << " can't EQUIP another materia. Inventory is full.-----------" << std::endl << std::endl;
+	delete m;
 }
 
 void Character::unequip(int idx) {

@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:13:04 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 11:34:56 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:50:17 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cure: public AMateria {
 	
 		Cure(void);
 		Cure(std::string const &type);
-		//Cure(Cure const &obj);
+		Cure(Cure const &obj);
 		~Cure(void);
 		
 		Cure &operator=(Cure const &obj);

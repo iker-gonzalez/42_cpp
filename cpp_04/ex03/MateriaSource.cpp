@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:21:07 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 14:13:34 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:51:17 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ MateriaSource::MateriaSource(MateriaSource const &obj) {
 
 MateriaSource::~MateriaSource(void) {
 	std::cout << "MateriaSource default destructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
+			delete _learnedMateria[i];
+	}
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &obj) {
@@ -49,6 +52,7 @@ void    MateriaSource::learnMateria(AMateria *m) {
 		idx++;
 	}
 	std::cout << std::endl << "---------Inventory is full. Can't learn another materia.-----------" << std::endl << std::endl;
+	delete m;
 }
 
 AMateria*    MateriaSource::createMateria(std::string const &type) {

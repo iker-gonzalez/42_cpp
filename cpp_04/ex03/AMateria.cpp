@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:53:33 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 11:42:58 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:36:46 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 AMateria::AMateria(void){
 	std::cout << "AMateria default constructor called" << std::endl;
-	this->_type = _type;
 }
 
 AMateria::AMateria(std::string const &type){
@@ -22,7 +21,7 @@ AMateria::AMateria(std::string const &type){
 	this->_type = type;
 }
 
-AMateria::AMateria(void){
+AMateria::~AMateria(void){
 	std::cout << "AMateria default destructor called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:29:10 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 11:37:11 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:38:12 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Ice::Ice(void): AMateria("ice") {
 
 Ice::Ice(std::string const &type): AMateria("ice") {
 	std::cout << "Ice parameter constructor called" << std::endl;
+	this->_type = type;
 }
 
 Ice::Ice(Ice const &obj): AMateria("ice") {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:38:16 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 11:38:35 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:10:55 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog: public Animal {
+
+    private:
+
+        Brain *brain;
 
     public:
 
@@ -24,7 +29,11 @@ class Dog: public Animal {
         ~Dog(void);
 
         Dog &operator=(Dog const &obj);
+
         void makeSound(void);
+
+        Brain	*getBrain( void ) const;
+
 };
 
 #endif

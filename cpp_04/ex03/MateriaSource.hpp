@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:02 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/01 13:38:06 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:38:31 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class MateriaSource: public IMateriaSource
 
         AMateria* _learnedMateria[4];
 
-    
     public:
 
         MateriaSource(void);

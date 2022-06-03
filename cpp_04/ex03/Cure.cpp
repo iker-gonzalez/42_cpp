@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:29:10 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 11:36:33 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:50:31 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ Cure::Cure(void): AMateria("cure") {
 
 Cure::Cure(std::string const &type): AMateria("cure") {
 	std::cout << "Cure parameter constructor called" << std::endl;
+	this->_type = type;
 }
-/*
+
 Cure::Cure(Cure const &obj): AMateria("cure") {
 	std::cout << "Cure copy constructor called" << std::endl;
 	*this = obj;
-}*/
+}
 
 Cure::~Cure(void) {
 	std::cout << "Cure default destructor called" << std::endl;

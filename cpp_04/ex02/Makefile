@@ -6,11 +6,11 @@
 #    By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/06/02 12:18:57 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/03 11:17:56 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 GPP		= clang++
