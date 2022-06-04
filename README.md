@@ -1,4 +1,4 @@
-# CPP
+# CPP Piscine
 ***This project contains 9 modules on the fundamentals of C++.***
 
 ### Module 00 
