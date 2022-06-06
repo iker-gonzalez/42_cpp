@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:08:35 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/02 11:09:46 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:13:03 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,28 @@ Bureaucrat::~Bureaucrat(void) {
 	std::cout << "Bureaucrat default destructor called" << std::endl;
 }
 
-void	Bureaucrat::incrementGrade(int increment) {
-	this->_grade += increment;
+void	Bureaucrat::incrementGrade() {
+
+	try {
+		if ((this->_grade - 1) < this->_gradeMax)
+			throw GradeTooHighException();
+		this->_grade -= 1;
+	}
+	catch (std::exception & e) {
+    	std::cout << e.what() << std::endl;
+	}
 }
 
-void	Bureaucrat::decrementGrade(int decrement) {
-	this->_grade -= decrement;
+void	Bureaucrat::decrementGrade() {
+
+	try {
+		if ((this->_grade + 1) > this->_gradeMin)
+			throw GradeTooLowException();
+		this->_grade += 1;
+	}
+	catch (std::exception & e) {
+    	std::cout << e.what() << std::endl;
+	}
 }
 
 std::string const &Bureaucrat::getName(void) const{
@@ -45,4 +61,11 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj)
 {
 	out << obj.getName() << ", bureaucrat grade " << obj.getGrade();
 	return (out);
+}
+
+const char *Bureaucrat::GradeTooHighException::what(void) const throw(){
+    return ("[❌]Invalid grade, higher than the maximum (1)");
+}
+const char *Bureaucrat::GradeTooLowException::what(void) const throw(){
+    return ("[❌]Invalid grade, lower than the minimum (150)");
 }
