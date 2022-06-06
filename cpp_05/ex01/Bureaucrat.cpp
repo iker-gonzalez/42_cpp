@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:08:35 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/06 11:36:29 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:27:00 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,17 @@ void	Bureaucrat::decrementGrade() {
 	}
 	catch (std::exception & e) {
     	std::cout << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::signForm(Form const &target) const{
+	
+	try {
+		if (target.getStatus() == true)
+			    std::cout << "[✅]"<< _name << " signs " << target.getName() << std::endl; 
+	}
+	catch (std::exception & e) {
+		std::cout << "[❌]" <<_name << " cannot sign " << target.getName() << " because: " << e.what() <<std::endl; 
 	}
 }
 

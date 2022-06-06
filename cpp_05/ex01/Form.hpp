@@ -3,26 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:41:49 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/06 12:11:38 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:12:44 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include "Bureaucrat.hpp"
 #include <iostream>
+
+class Bureaucrat;
 
 class Form {
 
 	private:
 
 		std::string const	_name;
-		bool				_signed;
-		int static const	_gradeToSign;
-		int static const	_gradeToExecute;
+		bool				_status;
+		int const	_gradeToSign;
+		int const	_gradeToExecute;
 
 	public:
 	
@@ -36,10 +39,27 @@ class Form {
 		
 		//getters
 		std::string const& getName(void) const;
-		bool const& getSigned(void) const;
+		bool const& getStatus(void) const;
 		int const& getGradeToSign(void) const;
 		int const& getGradeToExecute(void) const;
-		
+
+		void	setStatus(void);
+
+		void  beSigned(Bureaucrat const &obj);
+
+		//exceptions
+		class GradeTooHighException : public std::exception{
+			public:
+				virtual const char *what() const throw();
+    	};
+    	class GradeTooLowException : public std::exception{
+        	public:
+    			virtual const char *what() const throw();
+
+
+    };
 };
+
+std::ostream &operator<<(std::ostream &out, Form const &fixed);
 
 #endif

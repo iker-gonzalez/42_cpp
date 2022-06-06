@@ -3,21 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+         #
+#    By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/06/06 11:38:04 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/06 18:50:50 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.cpp Bureaucrat.cpp
+SRCS	= main.cpp Bureaucrat.cpp Form.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 GPP		= clang++
 RM		= rm -f
 FLAGS=	-Wall -Wextra -Werror
 
-NAME	= bureaucrat
+NAME	= form
 
 all:	$(NAME)
 
