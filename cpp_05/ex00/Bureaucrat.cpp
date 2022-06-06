@@ -6,29 +6,53 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:08:35 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/06 11:13:03 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:36:29 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void) {
+static const int	gradeMax = 1;
+static const int	gradeMin = 150;
+
+Bureaucrat::Bureaucrat(void): _name("unknown"), _grade(0) {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string newName, int newGrade): _name(newName), _grade(newGrade) {
+
 	std::cout << "Bureaucrat parameter constructor called" << std::endl;
+	try {
+		if (_grade < 1)
+			throw GradeTooHighException();
+		else if (_grade > 150)
+			throw GradeTooLowException();
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const &obj) {
+    std::cout << "Bureaucrat copy constructor called" << std::endl;
+    *this = obj;
+}
 
 Bureaucrat::~Bureaucrat(void) {
 	std::cout << "Bureaucrat default destructor called" << std::endl;
 }
 
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &obj) {
+    std::cout << "Bureaucrat assignation operator overload called" << std::endl;
+    *(std::string*)&_name = obj.getName();
+	_grade = obj.getGrade();
+    return (*this);
+}
+
 void	Bureaucrat::incrementGrade() {
 
 	try {
-		if ((this->_grade - 1) < this->_gradeMax)
+		if ((this->_grade - 1) < gradeMax)
 			throw GradeTooHighException();
 		this->_grade -= 1;
 	}
@@ -40,7 +64,7 @@ void	Bureaucrat::incrementGrade() {
 void	Bureaucrat::decrementGrade() {
 
 	try {
-		if ((this->_grade + 1) > this->_gradeMin)
+		if ((this->_grade + 1) > gradeMin)
 			throw GradeTooLowException();
 		this->_grade += 1;
 	}
