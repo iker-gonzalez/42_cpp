@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:01:16 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/06 19:26:24 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:07:17 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,14 @@ Form::Form(void): _name("unknown"), _status(false), _gradeToSign(0), _gradeToExe
 Form::Form(std::string const new_name, int gradeToSign, int gradeToExecute):
 	_name(new_name), _status(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
 	std::cout << "Form parameter constructor called" << std::endl;
-	try {
-		if (_gradeToSign < 1 || _gradeToExecute < 1)
-			throw GradeTooHighException();
-		else if (_gradeToExecute > 150 || _gradeToSign > 150)
-			throw GradeTooLowException();
-	}
-	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (_gradeToSign < 1 || _gradeToExecute < 1)
+		throw GradeTooHighException();
+	else if (_gradeToExecute > 150 || _gradeToSign > 150)
+		throw GradeTooLowException();
 }
 
 Form::Form(Form const &obj): _name(obj.getName()), _gradeToSign(getGradeToSign()), _gradeToExecute(getGradeToExecute()) {
-    std::cout << "Form copy constructor called" << std::endl;
+	std::cout << "Form copy constructor called" << std::endl;
 }
 
 Form::~Form(void) {
@@ -39,30 +34,26 @@ Form::~Form(void) {
 }
 
 Form &Form::operator=(Form const &obj) {
-    std::cout << "Form assignation operator overload called" << std::endl;
-    *(std::string*)&_name = obj.getName();
+	std::cout << "Form assignation operator overload called" << std::endl;
+	*(std::string*)&_name = obj.getName();
 	_status = obj.getStatus();
-    return (*this);
+	return (*this);
 }
 
 void	Form::beSigned(Bureaucrat const &obj) {
-	try {
-		if (obj.getGrade() > this->getGradeToSign()) {
+		if (obj.getGrade() <= this->getGradeToSign()) {
+			this->setStatus();
+			obj.signForm(*this);
+		}
+		else {
 			obj.signForm(*this);
 			throw GradeTooLowException();
 		}
-		this->setStatus();
-		obj.signForm(*this);
-
-	}
-	catch (std::exception & e) {
-    	std::cout << e.what() << std::endl;
-	}
 }
 
 //getters
 
-std::string const &Form::getName(void) const{
+std::string const &Form::getName(void) const {
 	return(this->_name);
 }
 
@@ -87,19 +78,19 @@ void	Form::setStatus(void) {
 //exceptions
 
 const char *Form::GradeTooHighException::what(void) const throw(){
-    return ("[❌]Grade too high");
+	return ("[❌]Grade too high");
 }
+
 const char *Form::GradeTooLowException::what(void) const throw(){
-    return ("[❌]Grade too low");
+	return ("[❌]Grade too low");
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &obj)
 {
 	std::cout << std::endl;
-	out << "*** FORM STATE ***" << std::endl;
-	out << "Name:" << obj.getName() << std::endl;
+	out << "📄" << obj.getName() << " form:" << std::endl;
 	out << "Status:" << obj.getStatus() << std::endl;
-	out << "Grade to sign:" << obj.getGradeToExecute() << std::endl;
-	out << "Grade to execute:" << obj.getGradeToSign() << std::endl;
+	out << "Grade to sign:" << obj.getGradeToSign() << std::endl;
+	out << "Grade to execute:" << obj.getGradeToExecute() << std::endl;
 	return (out);
 }
