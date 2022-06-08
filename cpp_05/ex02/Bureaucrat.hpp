@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:56:12 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/06 19:15:19 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:56:11 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ class Bureaucrat {
 		std::string const& getName(void) const;
 		int const& getGrade(void) const;
 
-		void	signForm(Form const &target) const;
+		void	signForm(Form &target);
+
+		void executeForm(Form const & form);
 		
 		/*Exceptions*/
 		class GradeTooHighException : public std::exception{

@@ -21,10 +21,15 @@ class PresidentialPardonForm: public Form {
 	
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(PresidentialPardonForm const &obj);
+		PresidentialPardonForm(std::string const &target);
 		
 		~PresidentialPardonForm(void);
 		
-        PresidentialPardonForm &operator=(PresidentialPardonForm const &obj);
+        //PresidentialPardonForm &operator=(PresidentialPardonForm const &obj);
+
+		void execute(Bureaucrat const & executor) const;
+
+
 };
 
 

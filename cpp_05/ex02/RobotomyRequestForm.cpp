@@ -3,22 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:40:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/08 14:39:39 by ikgonzal         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ShrubberyCreationRobotomyRequestForm.cpp                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 12:40:22 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/07 12:41:52 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:19:29 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +48,4 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 		std::cout << "[✅] chiiiiiclonclonpuff, " << getName() << " has been robotomized successfully" << std::endl;
 	else
 		std::cout << "[❌] poff, " << getName() << "'s robotomization has been unsuccessful" << std::endl;
-	std::cout << random << std::endl;
 }

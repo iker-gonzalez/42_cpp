@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:01:16 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/07 11:07:17 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:05:03 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,9 @@ Form &Form::operator=(Form const &obj) {
 }
 
 void	Form::beSigned(Bureaucrat const &obj) {
-		if (obj.getGrade() <= this->getGradeToSign()) {
-			this->setStatus();
-			obj.signForm(*this);
-		}
-		else {
-			obj.signForm(*this);
+		if (obj.getGrade() > this->getGradeToSign())
 			throw GradeTooLowException();
-		}
+		this->setStatus();
 }
 
 //getters

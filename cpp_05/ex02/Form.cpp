@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:01:16 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/07 11:07:17 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:01:21 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,9 @@ Form &Form::operator=(Form const &obj) {
 }
 
 void	Form::beSigned(Bureaucrat const &obj) {
-		if (obj.getGrade() <= this->getGradeToSign()) {
-			this->setStatus();
-			obj.signForm(*this);
-		}
-		else {
-			obj.signForm(*this);
+		if (obj.getGrade() > this->getGradeToSign())
 			throw GradeTooLowException();
-		}
+		this->setStatus();
 }
 
 //getters
@@ -85,10 +80,14 @@ const char *Form::GradeTooLowException::what(void) const throw(){
 	return ("[❌]Grade too low");
 }
 
+const char *Form::FormNotSigned::what(void) const throw(){
+	return ("[❌]Form can't be executed because has not been signed");
+}
+
 std::ostream &operator<<(std::ostream &out, Form const &obj)
 {
 	std::cout << std::endl;
-	out << "📄" << obj.getName() << " form:" << std::endl;
+	out << "[📄] " << obj.getName() << " form:" << std::endl;
 	out << "Status:" << obj.getStatus() << std::endl;
 	out << "Grade to sign:" << obj.getGradeToSign() << std::endl;
 	out << "Grade to execute:" << obj.getGradeToExecute() << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:41:49 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/07 13:12:04 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:58:48 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,21 @@ class Form {
 		void	setStatus(void);
 
 		void  beSigned(Bureaucrat const &obj);
-		
 		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		//exceptions
 		class GradeTooHighException : public std::exception{
 			public:
 				virtual const char *what() const throw();
-    	};
-    	class GradeTooLowException : public std::exception{
-        	public:
-    			virtual const char *what() const throw();
-
-
-    };
+		};
+		class GradeTooLowException : public std::exception{
+			public:
+				virtual const char *what() const throw();
+		};
+		class FormNotSigned : public std::exception{
+			public:
+				virtual const char *what() const throw();
+	};
 };
 
 std::ostream &operator<<(std::ostream &out, Form const &fixed);

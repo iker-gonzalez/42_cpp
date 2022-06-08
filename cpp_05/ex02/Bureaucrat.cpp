@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:08:35 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/07 11:13:42 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:59:44 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,24 @@ void	Bureaucrat::decrementGrade() {
 		this->_grade += 1;
 }
 
-void	Bureaucrat::signForm(Form const &target) const{
-	
-	if (target.getStatus() == true && target.getGradeToSign() >= this->getGrade())
-		std::cout << "[✅]"<< _name << " signs " << target.getName() << " form" << std::endl;
-	else {
-		std::cout << "[❌]" <<_name << " cannot sign " << target.getName() << " form because grade is too low" << std::endl; 
-		throw Form::GradeTooLowException();
-	}
+void	Bureaucrat::signForm(Form &target) {
+    try{
+        target.beSigned(*this);
+        std::cout << "[📝]"<< _name << " signs " << target.getName() << std::endl; 
+    }
+    catch (std::exception &e){
+    std::cout << _name << " cannot sign " << target.getName() << " because: " << e.what() <<std::endl; 
+    } 
+ }
+
+void	Bureaucrat::executeForm(Form const & form) {
+    try {
+            form.execute(*this);
+            std::cout << "[🆗]"<< _name << " executes " << form.getName() << std::endl; 
+     }
+    catch (std::exception &e){
+        std::cout << _name << " cannot executes " << form.getName() << " because: " << e.what() <<std::endl;
+    } 
 }
 
 std::string const &Bureaucrat::getName(void) const{
