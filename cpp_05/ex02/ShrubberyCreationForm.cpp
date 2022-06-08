@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void): Form("unknown", 145, 137) {
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(Bureaucrat const &target): Form(target.getName(), 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target): Form(target, 145, 137) {
 	std::cout << "ShrubberyCreationForm parameter constructor called" << std::endl;
 }
 

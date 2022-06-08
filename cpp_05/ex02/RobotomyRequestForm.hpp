@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:52:06 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/07 13:31:41 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:39:58 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@ class RobotomyRequestForm: public Form {
 
 		RobotomyRequestForm(void);
 		RobotomyRequestForm(RobotomyRequestForm const &obj);
+		RobotomyRequestForm(std::string const &obj);
 
 		~RobotomyRequestForm(void);
 
-		RobotomyRequestForm &operator=(RobotomyRequestForm const &obj);
+		//RobotomyRequestForm &operator=(RobotomyRequestForm const &obj);
+		
+		void execute(Bureaucrat const & executor) const;
+		
 };
 
 

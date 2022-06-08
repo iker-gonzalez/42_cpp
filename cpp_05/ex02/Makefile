@@ -6,11 +6,11 @@
 #    By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/06/07 13:31:32 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/08 14:32:05 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SRCS	= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 GPP		= clang++

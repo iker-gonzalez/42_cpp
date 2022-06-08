@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:52:59 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/07 13:32:23 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:35:44 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ShrubberyCreationForm: public Form {
 	public:
 
 		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(Bureaucrat const &target);
+		ShrubberyCreationForm(std::string const &target);
 		ShrubberyCreationForm(ShrubberyCreationForm const &obj);
 
 		~ShrubberyCreationForm(void);
