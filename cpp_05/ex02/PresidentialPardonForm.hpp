@@ -25,7 +25,7 @@ class PresidentialPardonForm: public Form {
 		
 		~PresidentialPardonForm(void);
 		
-        //PresidentialPardonForm &operator=(PresidentialPardonForm const &obj);
+        PresidentialPardonForm &operator=(PresidentialPardonForm const &obj);
 
 		void execute(Bureaucrat const & executor) const;
 

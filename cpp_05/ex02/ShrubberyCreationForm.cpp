@@ -28,11 +28,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &obj): 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 	std::cout << "ShrubberyCreationForm default destructor called" << std::endl;
 }
-/*
+
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &obj) {
 	std::cout << "ShrubberyCreationForm assignation operator overload called" << std::endl;
+	(void)obj;
 	return (*this);
-}*/
+}
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	

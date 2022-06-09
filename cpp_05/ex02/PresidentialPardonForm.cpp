@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:46:38 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/08 18:37:34 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:45:15 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &obj
 PresidentialPardonForm::~PresidentialPardonForm(void) {
 	std::cout << "PresidentialPardonForm default destructor called" << std::endl;
 }
-/*
+
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &obj) {
 	std::cout << "PresidentialPardonForm assignation operator overload called" << std::endl;
+	(void)obj;
 	return (*this);
-}*/
+}
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
     
