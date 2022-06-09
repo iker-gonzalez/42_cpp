@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:25:56 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 10:39:11 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:18:54 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ int main(void) {
 	Intern braulio;
 	Form* rrf;
 	rrf = braulio.makeForm("shrubbery creation", "insurtech");
-	
+	delete rrf;
 }

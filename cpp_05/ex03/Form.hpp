@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:41:49 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 10:11:12 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:19:09 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Form {
 		Form(std::string const new_name, int gradeToSign, int gradeToExecute);
 		Form(Form const &obj);
 		
-		~Form(void);
+		virtual ~Form(void);
 		
 		Form &operator=(Form const &obj);
 		

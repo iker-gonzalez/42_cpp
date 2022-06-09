@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:40:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 10:11:49 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:18:17 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &obj): Form(o
 RobotomyRequestForm::~RobotomyRequestForm(void) {
 	std::cout << "RobotomyRequestForm default destructor called" << std::endl;
 }
-/*
+
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &obj) {
 	std::cout << "RobotomyRequestForm assignation operator overload called" << std::endl;
+	(void)obj;
 	return (*this);
-}*/
+}
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	
