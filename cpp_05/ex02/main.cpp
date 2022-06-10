@@ -3,45 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:25:56 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/08 19:03:34 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 13:14:11 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int main(void) {
 
-	Bureaucrat p1("Braulio", 100);
-	
-	//try shrubbery action
-	ShrubberyCreationForm sh1 ("home");
-	std::cout << sh1 << std::endl;
-	sh1.execute(p1);
-	std::cout << p1 << std::endl;
+int main(void)
+{
+    Form *p1 = NULL;
 
-	//try robotomy action
-	RobotomyRequestForm rb1 ("insurance");
-	std::cout << rb1 << std::endl;
-	rb1.execute(p1);
-	std::cout << p1 << std::endl;
+    try{
+        std::cout << "[1️⃣ ]TEST 1. SHRUBBERY FORM " << std::endl;
+        p1 = new ShrubberyCreationForm("Shrubbery");
+        Bureaucrat b1("Pepe", 45);
+        std::cout << b1 << std::endl;
+        std::cout << *p1 << std::endl;
+        b1.executeForm(*p1);
+        b1.signForm(*p1);
+        b1.executeForm(*p1);
+        std::cout << b1 << std::endl;
+        std::cout << *p1 << std::endl;
+        delete p1;
+    }
+    catch (std::exception &e)
+    {
+        delete p1;
+        std::cout << e.what() << std::endl;
+    }
 
-	//try presidential action
-	try {
-		PresidentialPardonForm pr1 ("telephone");
-		std::cout << pr1 << std::endl;
-		p1.signForm(pr1);
-		std::cout << pr1 << std::endl;
-		p1.executeForm(pr1);
-		p1.executeForm(rb1);
-		p1.executeForm(sh1);
-	}
-	catch(std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+    try{
+        std::cout << std::endl << "[2️⃣ ]TEST 2. ROBOTOMY REQUEST FORM " << std::endl;
+        p1 = new RobotomyRequestForm("Robotomy");
+        Bureaucrat b1("Julio", 45);
+        std::cout << b1 << std::endl;
+        std::cout << *p1 << std::endl;
+        b1.executeForm(*p1);
+        b1.signForm(*p1);
+        b1.executeForm(*p1);
+        b1.incrementGrade();
+        b1.executeForm(*p1);
+        std::cout << b1 << std::endl;
+        std::cout << *p1 << std::endl;
+        delete p1;
+    }
+    catch (std::exception &e)
+    {
+        delete p1;
+        std::cout << e.what() << std::endl;
+    }
+
+    try
+    {
+       std::cout << std::endl << "[3️⃣  ]TEST 3. PRESIDENTIAL CREATION FORM " << std::endl;    
+       p1 = new PresidentialPardonForm("Pardon");
+       Bureaucrat b1("Jessica", 1);
+       std::cout << b1 << std::endl;
+       std::cout << *p1 << std::endl;
+       b1.executeForm(*p1);
+       b1.signForm(*p1);
+       b1.executeForm(*p1);
+       std::cout << b1 << std::endl;
+       std::cout << *p1 << std::endl; 
+       delete p1;
+    }
+    catch (std::exception &e){
+        delete p1;
+        std::cout <<  e.what() << std::endl;
+    };
+    return (0);
 }

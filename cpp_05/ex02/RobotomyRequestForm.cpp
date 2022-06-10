@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:40:05 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 12:44:53 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:06:50 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &o
 	return (*this);
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
+void RobotomyRequestForm::action(Bureaucrat const & executor) const {
 	
 	int random;
 	std::string	name;

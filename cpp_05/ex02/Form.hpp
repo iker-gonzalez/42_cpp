@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:41:49 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/08 18:58:48 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:08:04 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Form {
 		Form(std::string const new_name, int gradeToSign, int gradeToExecute);
 		Form(Form const &obj);
 		
-		~Form(void);
+		virtual ~Form(void);
 		
         Form &operator=(Form const &obj);
 		
@@ -46,7 +46,8 @@ class Form {
 		void	setStatus(void);
 
 		void  beSigned(Bureaucrat const &obj);
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		void	execute(Bureaucrat const & executor) const;
+		virtual void action(Bureaucrat const & executor) const = 0;
 
 		//exceptions
 		class GradeTooHighException : public std::exception{

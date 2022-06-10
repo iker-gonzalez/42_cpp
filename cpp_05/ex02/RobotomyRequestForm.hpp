@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:52:06 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 12:44:57 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:06:54 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RobotomyRequestForm: public Form {
 
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &obj);
 		
-		void execute(Bureaucrat const & executor) const;
+		void action(Bureaucrat const & executor) const;
 		
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 10:56:12 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/08 18:56:11 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:02:22 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Bureaucrat {
 
 		void	signForm(Form &target);
 
-		void executeForm(Form const & form);
+		virtual void executeForm(Form const & form);
 		
 		/*Exceptions*/
 		class GradeTooHighException : public std::exception{

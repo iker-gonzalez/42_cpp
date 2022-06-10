@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:01:16 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 08:58:46 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:14:42 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,14 @@ int const &Form::getGradeToExecute(void) const {
 
 void	Form::setStatus(void) {
 	this->_status = true;
+}
+
+void	Form::execute(Bureaucrat const & executor) const {
+	if (!this->getStatus())
+		throw FormNotSigned();
+	if (executor.getGrade() > getGradeToExecute())
+		throw GradeTooLowException();
+	action(executor);
 }
 
 //exceptions

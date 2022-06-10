@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:41:49 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 13:19:09 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 13:20:02 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ class Form {
 		void	setStatus(void);
 
 		void  beSigned(Bureaucrat const &obj);
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		void	execute(Bureaucrat const & executor) const;
+		virtual void action(Bureaucrat const & executor) const = 0;
 
 		//exceptions
 		class GradeTooHighException : public std::exception{

@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:46:38 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 13:18:25 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/10 13:20:07 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 	return (*this);
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
+void PresidentialPardonForm::action(Bureaucrat const & executor) const {
     
-    if (!getStatus())
+    if (this->getStatus() == false)
         throw FormNotSigned();
     if (executor.getGrade() <= getGradeToExecute()) {
 	    std::cout << "[ 🕊  ] "<< getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
