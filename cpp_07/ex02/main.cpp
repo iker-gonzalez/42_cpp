@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 11:16:18 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/14 10:23:04 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/06/14 10:35:53 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/06/14 10:55:39 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Array.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+int main(void) {
+	
+	//Default constructor
+	Array<int> numbers;
 
-class Cat: public Animal {
-
-	private:
-
-		Brain *brain;
-
-	public:
-
-		Cat(void);
-		Cat(Cat const &obj);
-		~Cat();
-
-		Cat &operator=(Cat const &obj);
-		void makeSound(void);
-		Brain	*getBrain( void ) const;
-
-};
-
-#endif
+	//Parameter constructor
+	Array<int> numbers2(6);
+	numbers2[3] = 5;
+	
+	//Copy constructor & assignment operator
+	Array<int> numbers3(numbers2);
+	
+	// Member function size
+	std::cout << numbers.size() << std::endl;
+	std::cout << numbers2.size() << std::endl;
+	
+	
+	
+}
