@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 09:26:26 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/14 10:59:49 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:50:25 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,14 @@ class Array {
 		
 		Array(Array const &obj) {
 			std::cout << "Array copy constructor called" << std::endl;
-			_arr = new T();
-			*this = obj;
+			_size = obj.size();
+			if (_size != 0)
+				_arr = new T(_size);
+			unsigned int i = 0;
+			while (i < _size) {
+				_arr[i] = obj._arr[i];
+				i++;
+			}
 		}
 		
 		~Array(void) {
@@ -49,30 +55,29 @@ class Array {
 		
 		Array &operator=(Array const &obj) {
 			std::cout << "Array asignment operator overload called" << std::endl;
+			if (this == &obj)
+				return *this;
 			_size = obj._size;
 			for (unsigned int i = 0; i < _size; i++)
 				_arr[i] = obj._arr[i];
-			return *this;
 		}
 		
-		T& operator[](unsigned int index) {
-			std::cout << "Array access operator overload called" << std::endl;
-			if (index >= _size || index < 0)
-        		throw OutOfRange();
-			return (_arr[index]);
-		}
-		
-		unsigned int size(void) {
+		 unsigned int size(void) const {
 			return(_size);
 		}
 		
 		class OutOfRange : public std::exception{
 			public:
-			virtual const char *what() const throw();
+			virtual const char *what() const throw() {
+				return ("[❌]Accessing out of range member");
+			}
 		};
 		
-		const char *Array::OutOfRange::what(void) const throw(){
-    		return ("[❌]Accessing out of range member");
+		T& operator[](unsigned int index) {
+			std::cout << "Array access operator overload called" << std::endl;
+			if (index > _size || index < 0)
+				throw OutOfRange();
+			return (_arr[index]);
 		}
 		
 };
