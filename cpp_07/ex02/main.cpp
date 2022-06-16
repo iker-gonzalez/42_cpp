@@ -6,13 +6,13 @@
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:53 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/14 13:41:41 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:47:45 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-#define MAX_VAL 7
+#define MAX_VAL 750
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -35,6 +35,8 @@ int main(int, char**)
     {
 		std::cout << "MI: " << mirror[i] << std::endl;
 		std::cout << "NU: " << numbers[i] << std::endl;
+        std::cout << "I: " << i << std::endl;
+
         if (mirror[i] != numbers[i])
         {
             std::cerr << "didn't save the same value!!" << std::endl;
