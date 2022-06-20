@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 11:16:18 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/14 10:23:04 by ikgonzal         ###   ########.fr       */
+/*   Created: 2022/06/14 08:44:25 by ikgonzal          #+#    #+#             */
+/*   Updated: 2022/06/14 09:03:57 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
 
-class Cat: public Animal {
+template <typename H>
+void	print(H const &data) {
+	std::cout << data << std::endl;
+};
 
-	private:
+template <typename T>
+void	iter(T *arr, int length, void(*func) (T const &)) {
 
-		Brain *brain;
-
-	public:
-
-		Cat(void);
-		Cat(Cat const &obj);
-		~Cat();
-
-		Cat &operator=(Cat const &obj);
-		void makeSound(void);
-		Brain	*getBrain( void ) const;
-
+	int i = 0;
+	while (i < length) {
+		func(arr[i]);
+		i++;
+	}
 };
 
 #endif
