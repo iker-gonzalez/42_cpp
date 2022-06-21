@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:57:43 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/20 18:07:06 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/21 10:36:38 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ class Scalar {
 		void searchType(void);
 		void findChar(std::string s, bool *dataType, std::string input);
 		void setDataType(void);
+		void findLimit(void);
+		void findSpecialCharacters(void);
+
+		void convert(void);
+		void convertFromChar(void);
+		void convertFromInt(void);
 };
 
 std::ostream &operator<<(std::ostream &out, Scalar const &fixed);

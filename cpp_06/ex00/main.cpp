@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:57:46 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/20 18:10:20 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/21 10:14:28 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main(int argc, char **argv) {
     Scalar fortytwo(argv[1]);
     fortytwo.searchType();
     fortytwo.setDataType();
-    std::cout << fortytwo << std::endl;
-    
+    fortytwo.convert();
 }

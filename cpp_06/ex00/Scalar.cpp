@@ -6,11 +6,12 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:10:09 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/20 18:09:21 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/21 10:49:18 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Scalar.hpp"
+#include <limits>
 
 Scalar::Scalar(void): _type("unkown"), _char(false), _int(false), _float(false), _decimal(false) {
 	std::cout << "Scalar default constructor has been called" << std::endl;
@@ -84,7 +85,68 @@ void Scalar::setDataType(void) {
 		_type = "double";
 	else if (_decimal && _float)
 		_type = "float";
+	findSpecialCharacters();
+	if (_type == "integer" || _type == "float" || _type == "double")
+		findLimit();
 }
 
+void Scalar::findSpecialCharacters(void) {
+
+	std::string special[6] = {"-inff", "+inff", "-inf", "+inf", "nanf", "nan"};
+	for (int i = 0; i < 6; i++) {
+		if (!_input.compare(special[i]))
+			_type = special[i];
+	}
+}
+
+void Scalar::findLimit(){
+
+	if (std::atol(_input.c_str()) >= std::numeric_limits<long>::max() || std::atol(_input.c_str()) <= std::numeric_limits<long>::min())
+		_type = "impossible";
+}
+
+
+// Conversions
+
+void Scalar::convertFromChar(void)
+{
+   char c = _input[0];
+
+   std::cout << "Char: "  << "'" << static_cast<char>(c)  << "'" << std::endl;
+   std::cout << "Int: " << static_cast<int>(c) << std::endl;
+   std::cout << "Float: " << static_cast<float>(c) << ".0f" << std::endl;
+   std::cout << "Double: " << static_cast<double>(c) << ".0" <<std::endl;
+}
+
+void Scalar::convertFromInt(void)
+{
+	int in = std::atoi(_input.c_str());
+
+	if (in < 0 || in > 127)
+		std::cout << "Char: impossible" << std::endl;
+	else if (in >= 0 && in <= 31)
+		std::cout << "Char: Non displayable" << std::endl;
+	else
+		std::cout << "Char: " << "'" << static_cast<char>(in) << "'" << std::endl;
+	std::cout << "Int: " << static_cast<int>(in) << std::endl;
+	std::cout << "Float: " << static_cast<float>(in) << ".0f" << std::endl;
+	std::cout << "Double: " << static_cast<double>(in) << ".0" << std::endl;
+}
+
+
+
+void Scalar::convert(void) {
+
+	if (_type == "char")
+		convertFromChar();
+	else if (_type == "integer")
+		convertFromInt();
+	else if(_type == "impossible") {
+		std::cout << "Char: impossible"  << std::endl;
+		std::cout << "Int: impossible"  << std::endl;
+		std::cout << "Float: impossible"  << std::endl;
+		std::cout << "Double: impossible"  << std::endl;
+	}
+}
 
 
