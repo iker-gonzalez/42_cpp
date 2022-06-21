@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:57:43 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/21 10:36:38 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/21 11:11:59 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Scalar {
 		void convert(void);
 		void convertFromChar(void);
 		void convertFromInt(void);
+		void convertFromFloat(void);
 };
 
 std::ostream &operator<<(std::ostream &out, Scalar const &fixed);

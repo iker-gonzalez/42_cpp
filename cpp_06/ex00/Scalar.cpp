@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:10:09 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/21 10:49:18 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/21 11:30:24 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,14 @@ void Scalar::convertFromInt(void)
 	std::cout << "Double: " << static_cast<double>(in) << ".0" << std::endl;
 }
 
+void Scalar::convertFromFloat(void)
+{
+	//float fl =  std::stof(_input.c_str());
+	 std::string sub = _input.substr(_input.find(".") + 1, _input.length() - 1);
+	 std::cout << sub << std::endl;
+
+}
+
 
 
 void Scalar::convert(void) {
@@ -141,6 +149,8 @@ void Scalar::convert(void) {
 		convertFromChar();
 	else if (_type == "integer")
 		convertFromInt();
+	else if (_type == "float")
+		convertFromFloat();
 	else if(_type == "impossible") {
 		std::cout << "Char: impossible"  << std::endl;
 		std::cout << "Int: impossible"  << std::endl;
