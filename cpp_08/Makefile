@@ -6,7 +6,7 @@
 #    By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 18:56:23 by ikgonzal          #+#    #+#              #
-#    Updated: 2022/06/23 12:13:17 by ikgonzal         ###   ########.fr        #
+#    Updated: 2022/06/24 09:11:30 by ikgonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,17 @@ OBJS	= $(SRCS:.cpp=.o)
 GPP		= clang++
 RM		= rm -f
 FLAGS=	-Wall -Wextra -Werror
+VERSION = -std=c++98 -pedantic
 
 NAME	= stl
 
 all:	$(NAME)
 
 $(NAME): $(OBJS)
-	$(GPP) $(FLAGS) -o $(NAME) $(OBJS)
+	$(GPP) $(FLAGS) $(VERSION) -o $(NAME) $(OBJS)
 
 %.o : %.cpp
-		$(GPP) $(FLAGS) -c $< -o $@
+		$(GPP) $(FLAGS) $(VERSION) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
