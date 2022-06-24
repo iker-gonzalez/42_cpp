@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 09:23:30 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/24 12:06:48 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/24 12:08:58 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Span &Span::operator=(Span const &obj) {
 	}
 	return *this;
 }
-
 
 Span::~Span(void) {
 	std::cout << "Spand default destructor called" << std::endl;
