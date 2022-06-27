@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 09:26:26 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/16 18:54:50 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 10:51:29 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ class Array {
 		};
 		
 		T& operator[](unsigned int index) {
-			std::cout << "Array access operator overload called" << std::endl;
 			if (index > _size || index < 0)
 				throw OutOfRange();
 			return (_arr[index]);

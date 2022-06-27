@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:35:53 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/16 18:47:45 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 10:55:06 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,16 @@ int main(int, char**)
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
-		
     }
-    //SCOPE
+    //deep copy
+    /*for (int i = 0; i < MAX_VAL; i++)
     {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+        const int value = rand();
+        numbers[i] = value;
+    }*/
 
     for (int i = 0; i < MAX_VAL; i++)
     {
-		std::cout << "MI: " << mirror[i] << std::endl;
-		std::cout << "NU: " << numbers[i] << std::endl;
-        std::cout << "I: " << i << std::endl;
-
         if (mirror[i] != numbers[i])
         {
             std::cerr << "didn't save the same value!!" << std::endl;

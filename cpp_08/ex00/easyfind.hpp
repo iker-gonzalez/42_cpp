@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:57:02 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/24 09:11:46 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:34:46 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <algorithm>
 
 template <typename T>
 void    easyfind(T cont, int &x){
