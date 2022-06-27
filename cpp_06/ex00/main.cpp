@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:57:46 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/21 10:14:28 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 09:45:49 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,13 @@ int main(int argc, char **argv) {
         std::cout << "Invalid arguments (2)" << std::endl;
         return (1);
     }
-    Scalar fortytwo(argv[1]);
-    fortytwo.searchType();
-    fortytwo.setDataType();
-    fortytwo.convert();
+    try {
+        Scalar fortytwo(argv[1]);
+        fortytwo.searchType();
+        fortytwo.setDataType();
+        fortytwo.convert();
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
 }

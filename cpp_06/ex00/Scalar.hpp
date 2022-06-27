@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:57:43 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/21 11:11:59 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 10:08:09 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,20 @@ class Scalar {
 		void setDataType(void);
 		void findLimit(void);
 		void findSpecialCharacters(void);
+		void checkImpossibles(void);
+		int nbChars(void);
 
 		void convert(void);
 		void convertFromChar(void);
 		void convertFromInt(void);
 		void convertFromFloat(void);
+		void convertFromDouble(void);
+		void convertFromSpecial(void);
+
+		class ConversionNotPossible : public std::exception{
+        	public:
+    			virtual const char *what() const throw();
+    };
 };
 
 std::ostream &operator<<(std::ostream &out, Scalar const &fixed);

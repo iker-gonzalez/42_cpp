@@ -6,7 +6,7 @@
 /*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:10:09 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/21 11:30:24 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 10:36:53 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,46 @@ void Scalar::searchType(void) {
 		findChar(array_number[i], &_int, _input);
 		findChar("f", &_float, _input);
 		findChar(".", &_decimal, _input);
-		//findChar("-", &_idxNegative, _input);
-		//findChar("+", &_idxPositive, _input);
 	}
+}
+
+int Scalar::nbChars(void) {
+
+	int k = 0;
+	unsigned long i = 0;
+	while (i < (_input.length()))
+	{
+		if ((_input[i] > 31 && _input[i] < 48) || (_input[i] > 57 && _input[i] < 127))
+			k++;
+		i++;
+	}
+	return k;
+}
+
+void Scalar::checkImpossibles(void) {
+	
+   if (_float)
+	{
+		if (!_decimal && _input.length() != 1)
+            _type = "impossible";
+		else if (_input.find("f") != (_input.length() - 1))
+			_type = "impossible";
+		else if (nbChars() > 2)
+			_type = "impossible";
+	}
+	else if (_decimal && !_float) {
+		std::cout << "nb chars: " << nbChars() << std::endl;
+		if (nbChars() > 1) {
+			_type = "impossible";
+		}
+		if (nbChars() == 1 && (_input.find(".") == (_input.length() - 1)))
+			_type = "impossible";
+	}
+	else if (_int && nbChars())
+		_type = "impossible";
+	else if (isprint(_input[0]) && _input.length() > 1 && !isdigit(_input[0]))
+	   _type = "impossible";
+
 }
 
 void Scalar::setDataType(void) {
@@ -85,6 +122,7 @@ void Scalar::setDataType(void) {
 		_type = "double";
 	else if (_decimal && _float)
 		_type = "float";
+	checkImpossibles();
 	findSpecialCharacters();
 	if (_type == "integer" || _type == "float" || _type == "double")
 		findLimit();
@@ -135,13 +173,64 @@ void Scalar::convertFromInt(void)
 
 void Scalar::convertFromFloat(void)
 {
-	//float fl =  std::stof(_input.c_str());
-	 std::string sub = _input.substr(_input.find(".") + 1, _input.length() - 1);
-	 std::cout << sub << std::endl;
-
+   float fl =  std::stof(_input.c_str());
+   if ((fl >= 0 && fl < 32) || fl == 127)
+      std::cout << "Char: " << "Non displayable" <<std::endl;
+   else if (fl < 0 || fl > 127)
+      std::cout << "Char: " << "impossible" <<std::endl;
+   else
+      std::cout << "Char: " << "'" << static_cast<char>(fl) << "'" <<std::endl;
+    std::cout << "Int: " << static_cast<int>(fl) << std::endl;
+	std::string sub = _input.substr(_input.find(".") + 1, _input.length() - 1);
+	if (_input[_input.length() - 2] == '0' && sub.length() == 2) {
+		std::cout << "Float: " << static_cast<float>(fl) << ".0f" << std::endl;
+		std::cout << "Double: " << static_cast<double>(fl) << ".0" << std::endl;
+	}
+	else {
+		std::cout << "Float: " << static_cast<float>(fl) << "f" << std::endl;
+		std::cout << "Double: " << static_cast<double>(fl) << std::endl;
+	}
 }
 
+void Scalar::convertFromDouble(void)
+{
+   double db =  std::stod(_input.c_str());
+   if ((db >= 0 && db < 32) || db == 127)
+      std::cout << "Char: " << "Non displayable" <<std::endl;
+   else if (db < 0 || db > 127)
+      std::cout << "Char: " << "impossible" <<std::endl;
+   else
+      std::cout << "Char: " << "'" << static_cast<char>(db) << "'" <<std::endl;
+    std::cout << "Int: " << static_cast<int>(db) << std::endl;
+	std::string sub = _input.substr(_input.find(".") + 1, _input.length() - 1);
+	if (_input[_input.length() - 1] == '0' && sub.length() == 1) {
+		std::cout << "Float: " << static_cast<float>(db) << ".0f" << std::endl;
+		std::cout << "Double: " << static_cast<double>(db) << ".0" << std::endl;
+	}
+	else {
+		std::cout << "Float: " << static_cast<float>(db) << "f" << std::endl;
+		std::cout << "Double: " << static_cast<double>(db) << std::endl;
+	}
+}
 
+void Scalar::convertFromSpecial(void) {
+	
+	std::cout << "Char: " << "impossible" << std::endl;
+	std::cout << "Int: " << "impossible" << std::endl;
+	if (_type == "nan" || _type == "nanf")
+	{
+		std::cout << "Float: " << "nanf" << std::endl;
+		std::cout << "Double: " << "nan" << std::endl;
+	}
+	else if (_float && _input[_input.length() - 2] == 'f') {
+		std::cout << "Float: " << _type << std::endl;
+		std::cout << "Double: " << _type.substr(0, _type.length() - 1) << std::endl;
+	}
+	else {
+		std::cout << "Float: " << _type << "f" << std::endl;
+		std::cout << "Double: " << _type << std::endl;
+	}
+}
 
 void Scalar::convert(void) {
 
@@ -151,12 +240,23 @@ void Scalar::convert(void) {
 		convertFromInt();
 	else if (_type == "float")
 		convertFromFloat();
+	else if (_type == "double")
+		convertFromDouble();
+	else if (_type == "double")
+		convertFromDouble();
 	else if(_type == "impossible") {
 		std::cout << "Char: impossible"  << std::endl;
 		std::cout << "Int: impossible"  << std::endl;
 		std::cout << "Float: impossible"  << std::endl;
 		std::cout << "Double: impossible"  << std::endl;
 	}
+	else
+		convertFromSpecial();
+}
+
+//exception
+const char *Scalar::ConversionNotPossible::what(void) const throw(){
+    return ("[❌] Conversion not possible");
 }
 
 
