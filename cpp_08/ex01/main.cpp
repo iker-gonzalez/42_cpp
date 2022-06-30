@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikgonzal <ikgonzal@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ikgonzal <ikgonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 10:13:15 by ikgonzal          #+#    #+#             */
-/*   Updated: 2022/06/24 12:03:44 by ikgonzal         ###   ########.fr       */
+/*   Updated: 2022/06/30 08:50:05 by ikgonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void) {
     std::cout << "---- 2️⃣ NOT ENOUGH NUMBERS TEST ----" << std::endl;
     Span sp1 = Span(4);
     try{
-        sp1.addNumber(5);
+        sp1.addNumber(5); 
         std::cout << sp1.shortestSpan() << std::endl;
         std::cout << sp1.longestSpan() << std::endl;
     }
